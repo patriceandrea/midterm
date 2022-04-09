@@ -15,14 +15,16 @@
 - PK `id` — `SERIAL PRIMARY KEY NOT NULL`
 - `name` — `VARCHAR(255)`
 - `description` — `VARCHAR(255)`
-- `price` — `INTEGER`
+- `price` — `INTEGER DEFAULT 0`
 - `modifiers` — `TEXT`
     - e.g. `add_lettuce`, `no_buns`, `fries_for_poutine`
     - each modifier should have its own price and it can be negative
 - `photo` — `VARCHAR(255)`
 - `category` — `SMALLINT`
-- `status` — `TEXT`
+- `type` — `TEXT`
     - e.g. vegetarian, gluten-free, spicy
+- `type` — `TEXT`
+- `active`- `BOOLEAN` NOT NULL
 
 # Orders
 

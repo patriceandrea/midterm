@@ -6,7 +6,7 @@
 
 
 -- Widgets table seeds here (Example)
-INSERT INTO menu_items (name, description, price, modifiers, photo, category, status)
+INSERT INTO menu_items (name, description, price, modifiers, photo, category, type)
 VALUES ('Truffle and cauliflower soup', 'Truffle and fresh cauliflower combined into chunky soup', 1000, '{}', 'images/food_01.jpg', 1, 'Vegetarian' ),
 ('Spinach and mushroom gyoza', 'Thin pastry cases stuffed with fresh spinach and chestnut mushroom', 1000, '{}', 'images/food_02.jpg', 1, 'Vegetarian' ),
 ('Aubergine and cardamom dip', 'A dip made from chargrilled aubergine and green cardamom', 1500, '{}', 'images/food_03.jpg', 1, 'Meat' ),
