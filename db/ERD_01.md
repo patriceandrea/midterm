@@ -14,6 +14,7 @@
 
 - PK `id` — `SERIAL PRIMARY KEY NOT NULL`
 - `name` — `VARCHAR(255)`
+- `description` — `VARCHAR(255)`
 - `price` — `INTEGER`
 - `modifiers` — `TEXT`
     - e.g. `add_lettuce`, `no_buns`, `fries_for_poutine`
@@ -49,7 +50,7 @@
 ```jsx
 {
 	name: 'Burger',
-	price: '1299', 
+	price: '1299',
 	modifiers: {
 		add_lettuce: 0.25,
 		no_buns: -0.50,
