@@ -31,7 +31,7 @@ VALUES
 ('Dirty Martini', '2.5 oz gin or vodka, 0.5 oz dry vermouth, 0.5 oz olive brine', 1000, '{}', 'images/drink_01.jpg', 4, 'Alcohol', 't' ),
 ('Cosmopolitan', '1 oz vodka, 1 oz triple sec, 0.5 oz lime juice, 1.5 oz cranberry juice', 1500, '{}', 'images/drink_02.jpg', 4, 'Alcohol', 't' ),
 ('Gin Gimlet', '1.5 oz gin, 1 oz lime juice, club soda', 1500, '{}', 'images/drink_03.jpg', 4, 'Alcohol', 't' ),
-('Jack Rose', '2 oz Applejack, 1 oz lemon juice, 0.5 oz grenadine', 1200, {}, 'images/drink_04.jpg', 4, 'Alcohol', 't' ),
+('Jack Rose', '2 oz Applejack, 1 oz lemon juice, 0.5 oz grenadine', 1200, '{}', 'images/drink_04.jpg', 4, 'Alcohol', 't' ),
 ('Screwdriver', '2 oz vodka, orange juice', 1300, '{}', 'images/drink_05.jpg', 4, 'Alcohol', 't' ),
 ('Chill-Out Honeydew Cucumber Slushy', 'High in B vitamins, cucumbers both cool and calm you', 5000, '{}', 'images/drink_06.jpg', 4, 'Non-Alcoholic', 't' ),
 ('Strawberry - Rose Agua Fresca', 'This refreshing beverage makes the most of peak-of-the-season strawberries.', 6000, '{}', 'images/drink_07.jpg', 4, 'Non-Alcoholic', 't' ),
