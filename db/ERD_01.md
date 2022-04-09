@@ -2,7 +2,7 @@
 
 # Users
 
-- `id` — `SERIAL PRIMARY KEY NOT NULL`
+- PK `id` — `SERIAL PRIMARY KEY NOT NULL`
 - `name` — `VARCHAR(255)`
 - `email` — `VARCHAR(255)`
 - `phone` — `VARCHAR(22)`
@@ -12,9 +12,9 @@
 
 # Menu Items
 
-- `id` — `SERIAL PRIMARY KEY NOT NULL`
+- PK `id` — `SERIAL PRIMARY KEY NOT NULL`
 - `name` — `VARCHAR(255)`
-- `price` — INTEGER
+- `price` — `INTEGER`
 - `modifiers` — `TEXT`
     - e.g. `add_lettuce`, `no_buns`, `fries_for_poutine`
     - each modifier should have its own price and it can be negative
@@ -25,8 +25,8 @@
 
 # Orders
 
-- `id` — `SERIAL PRIMARY KEY NOT NULL`
-- ^^ `user_id` — `INTEGER REFERENCES users(id) ON DELETE CASCADE`
+- PK `id` — `SERIAL PRIMARY KEY NOT NULL`
+- FK `user_id` — `INTEGER REFERENCES users(id) ON DELETE CASCADE`
 - `comments` — `VARCHAR(255)`
 - `created_at` — `TIMESTAMPZ`
 - `ready_at` — `TIMESTAMPZ`
@@ -34,11 +34,12 @@
 - `subtotal` — `INTEGER`
 - `taxes` — `INTEGER`
 - `total_price` — `INTEGER`
+- `review` — `SMALLINT`
 
 # Order Items
 
-- `id` — `SERIAL PRIMARY KEY NOT NULL`
-- `order_id` — `INTEGER REFERENCES orders(id) ON DELETE CASCADE`
+- PK `id` — `SERIAL PRIMARY KEY NOT NULL`
+- FK `order_id` — `INTEGER REFERENCES orders(id) ON DELETE CASCADE`
 - `item` — `TEXT` (JSON object stringified)
 
 ---
