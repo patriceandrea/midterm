@@ -34,7 +34,7 @@
 - `subtotal` — `INTEGER`
 - `taxes` — `INTEGER`
 - `total_price` — `INTEGER`
-- `review` — `SMALLINT`
+- `rating` — `SMALLINT`
 
 # Order Items
 

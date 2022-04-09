@@ -1,0 +1,14 @@
+DROP TABLE IF EXISTS orders CASCADE;
+
+CREATE TABLE orders (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  comments VARCHAR(255),
+  created_at TIMESTAMP WITH TIME ZONE,
+  ready_at TIMESTAMP WITH TIME ZONE,
+  status VARCHAR(255),
+  subtotal INTEGER,
+  taxes INTEGER,
+  total_price INTEGER,
+  rating SMALLINT
+);
