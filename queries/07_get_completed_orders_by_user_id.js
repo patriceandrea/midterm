@@ -16,7 +16,7 @@ const getCompletedOrdersByUserId = (id) => {
             FROM orders
             JOIN users ON user_id = user(id)
             WHERE user_id = $1
-            AND ready_at IS NOT NULL `,
+            AND ready_at IS NOT NULL; `,
     values: [id],
   };
 

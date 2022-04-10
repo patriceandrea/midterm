@@ -9,12 +9,13 @@ const pool = new Pool({
 
 const id = process.argv[2];
 
-const getAllIncomingOrders = () => {
+const getPendingOrders = () => {
   const query = {
-    name: 'get_all_incoming_orders',
+    name: 'get_all_pending_orders',
     text: `SELECT *
             FROM orders
-            WHERE ready_at IS NULL ;`,
+            WHERE created_at is NOT NULL
+            AND ready_at IS NULL; `,
     values: [id],
   };
 
@@ -27,4 +28,4 @@ const getAllIncomingOrders = () => {
     .finally(() => pool.end());
 };
 
-getAllIncomingOrders().then((x) => console.log(x));
+getPendingOrder().then((x) => console.log(x));

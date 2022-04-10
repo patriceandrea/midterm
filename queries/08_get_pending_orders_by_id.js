@@ -17,7 +17,7 @@ const getPendingOrdersByUserId = (id) => {
             JOIN users ON user_id = user(id)
             WHERE user_id = $1
             AND created_at is NOT NULL
-            AND ready_at IS NULL `,
+            AND ready_at IS NULL;`,
     values: [id],
   };
 
