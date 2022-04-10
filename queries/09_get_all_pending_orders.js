@@ -28,4 +28,4 @@ const getPendingOrders = () => {
     .finally(() => pool.end());
 };
 
-getPendingOrder().then((x) => console.log(x));
+getPendingOrders().then((x) => console.log(x));
