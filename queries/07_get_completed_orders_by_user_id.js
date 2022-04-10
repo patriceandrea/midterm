@@ -7,6 +7,7 @@ const pool = new Pool({
   database: 'midterm'
 });
 
+
 const id = process.argv[2];
 
 const getCompletedOrdersByUserId = (id) => {

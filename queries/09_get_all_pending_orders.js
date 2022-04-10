@@ -7,7 +7,7 @@ const pool = new Pool({
   database: 'midterm'
 });
 
-const id = process.argv[2];
+
 
 const getPendingOrders = () => {
   const query = {
@@ -16,7 +16,6 @@ const getPendingOrders = () => {
             FROM orders
             WHERE created_at is NOT NULL
             AND ready_at IS NULL; `,
-    values: [id],
   };
 
   return pool

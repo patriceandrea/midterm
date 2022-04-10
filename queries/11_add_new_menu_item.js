@@ -7,8 +7,6 @@ const pool = new Pool({
   database: 'midterm'
 });
 
-const id = process.argv[2];
-
 const addNewMenuItem = (menuItem) => {
   const query = {
     name: 'add_new_menu_item',

@@ -7,7 +7,6 @@ const pool = new Pool({
   database: 'midterm'
 });
 
-const id = process.argv[2];
 
 const getAllIncomingOrders = () => {
   const query = {
@@ -15,7 +14,6 @@ const getAllIncomingOrders = () => {
     text: `SELECT *
             FROM orders
             WHERE ready_at IS NULL ;`,
-    values: [id],
   };
 
   return pool

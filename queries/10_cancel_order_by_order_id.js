@@ -7,7 +7,7 @@ const pool = new Pool({
   database: 'midterm'
 });
 
-const id = process.argv[2];
+const orderId = process.argv[2];
 
 const cancelOrderByOrderId = (orderId) => {
   const query = {
