@@ -14,8 +14,7 @@ const getPendingOrders = () => {
     name: 'get_all_pending_orders',
     text: `SELECT *
             FROM orders
-            WHERE created_at is NOT NULL
-            AND ready_at IS NULL; `,
+            WHERE ready_at IS NULL; `,
   };
 
   return pool

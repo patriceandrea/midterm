@@ -14,10 +14,9 @@ const getPendingOrdersByUserId = (id) => {
     name: 'get_all_pending_orders',
     text: `SELECT *
             FROM orders
-            JOIN users ON user_id = user(id)
+            JOIN users ON user_id = users.id
             WHERE user_id = $1
-            AND created_at is NOT NULL
-            AND ready_at IS NULL;`,
+            AND orders.ready_at IS NULL;`,
     values: [id],
   };
 

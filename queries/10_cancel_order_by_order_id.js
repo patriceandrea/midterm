@@ -12,9 +12,8 @@ const orderId = process.argv[2];
 const cancelOrderByOrderId = (orderId) => {
   const query = {
     name: 'cancel_Order_By_Order_Id',
-    text: `Delete *
-            FROM orders
-            WHERE id is $1; `,
+    text: `Delete FROM orders
+            WHERE id = $1; `,
     values: [orderId],
   };
 
