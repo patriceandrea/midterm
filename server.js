@@ -46,6 +46,10 @@ app.use("/api/users", usersRoutes(db));
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
+app.get("/dev", (req, res) => {
+  res.render("dev");
+});
+
 app.get("/", (req, res) => {
   res.render("index");
 });
