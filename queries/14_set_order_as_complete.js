@@ -14,7 +14,7 @@ const setOrderCompleteWithOrderId = (orderId) => {
   const query = {
     name: 'set_complete_with_order_id',
     text: `UPDATE orders
-    SET ready_at = Now();
+    SET ready_at = NOW();
     WHERE id = $1; `
   ,values:[orderId],
   };
