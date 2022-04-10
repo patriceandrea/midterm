@@ -11,7 +11,6 @@ const categoryID = process.argv[2];
 
 const getMenuItemsByCategory = (categoryID) => {
   const query = {
-    name: '',
     text: `SELECT items.*, c.name AS category_name
              FROM menu_items AS items
              JOIN menu_categories AS c ON c.id = items.category

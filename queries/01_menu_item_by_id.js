@@ -37,7 +37,6 @@ if (process.argv.length > 3) {
 
 const getMenuItemByID = (id) => {
   const query = {
-    name: "menu-item-by-id",
     text: `SELECT * FROM menu_items
             WHERE id = $1;`,
     values: [id],
