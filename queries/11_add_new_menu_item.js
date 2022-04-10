@@ -12,7 +12,7 @@ const addNewMenuItem = (menuItem) => {
     name: 'add_new_menu_item',
     text: `INSERT INTO menu_items (name, description, price, modifiers, photo, category, type, active)
     VALUES($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *;`,
-    values: [menuItem.name, menuItem.description, menuItem.price, menuItem.modifiers, menuItem.photo, menuItem.category, menuItem,type, menuItem.active],
+    values: [menuItem.name, menuItem.description, menuItem.price, menuItem.modifiers, menuItem.photo, menuItem.category, menuItem.type, menuItem.active],
   };
 
   return pool
@@ -25,3 +25,14 @@ const addNewMenuItem = (menuItem) => {
 };
 
 addNewMenuItem(menuItem).then((x) => console.log(x));
+
+
+// addNewMenuItem({
+//   name: 'Popcorn',
+//   description: 'popcorn',
+//   price: 1000,
+//   modifiers: 'none',
+//   category: 1,
+//   type: 'Snack',
+//   active: false
+// }).then((x) => console.log(x));
