@@ -7,7 +7,7 @@ CREATE TABLE menu_items (
   price INTEGER DEFAULT 0,
   modifiers TEXT,
   photo VARCHAR(255),
-  category SMALLINT,
+  category SMALLINT REFERENCES menu_categories(id) ON DELETE CASCADE,
   type TEXT,
   active BOOLEAN NOT NULL
 );

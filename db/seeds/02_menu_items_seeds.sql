@@ -1,23 +1,14 @@
--- category
--- 1 - appetizers
--- 2 - mains
--- 3 - desserts
--- 4 - beverages
-
-
--- Widgets table seeds here (Example)
 INSERT INTO menu_items (name, description, price, modifiers, photo, category, type, active)
-VALUES
-('Truffle and cauliflower soup', 'Truffle and fresh cauliflower combined into chunky soup', 1000, '{}', 'img/food_01.jpg', 1, 'Vegetarian', 't' ),
+VALUES ('Truffle and cauliflower soup', 'Truffle and fresh cauliflower combined into chunky soup', 1000, '{}', 'img/food_01.jpg', 1, 'Vegetarian', 't' ),
 ('Spinach and mushroom gyoza', 'Thin pastry cases stuffed with fresh spinach and chestnut mushroom', 1000, '{}', 'img/food_02.jpg', 1, 'Vegetarian', 't' ),
 ('Aubergine and cardamom dip', 'A dip made from chargrilled aubergine and green cardamom', 1500, '{}', 'img/food_03.jpg', 1, 'Meat', 't' ),
 ('Tofu and scallop wontons', 'Thin wonton cases stuffed with marinaded tofu and scallop', 1500, '{}', 'img/food_04.jpg', 1, 'Meat', 't' ),
 ('Fish and sausage parcels', 'Thin filo pastry cases stuffed with fish and Cumberland sausage', 1200, '{}', 'img/food_05.jpg', 1, 'Meat', 't' ),
 ('Spring onion and spinach fritters', 'Fluffy fritters filled with fresh spring onion and spinach', 1000, '{}', 'img/food_06.jpg', 2, 'Vegan', 't' ),
-(' Kiwano and marrow salad', 'A crunchy salad featuring fresh kiwano and marrow', 1500, '{}', 'img/food_07.jpg', 2, 'Vegan', 't' ),
+('Kiwano and marrow salad', 'A crunchy salad featuring fresh kiwano and marrow', 1500, '{}', 'img/food_07.jpg', 2, 'Vegan', 't' ),
 ('Raisin and nutmeg loaf', 'Crunchy bread made with fresh raisin and nutmeg', 2000, '{}', 'img/food_08.jpg', 2, 'Vegan', 't' ),
 ('Potato and cod curry', 'Hot curry made with baby new potato and pacific cod', 2500, '{}', 'img/food_09.jpg', 2, 'Meat', 't' ),
-(' Salmon and stilton fusilli', 'Fresh egg pasta in a sauce made from freshly-caught salmon and stilton', 3000, '{}', 'img/food_10.jpg', 2, 'Meat', 't' ),
+('Salmon and stilton fusilli', 'Fresh egg pasta in a sauce made from freshly-caught salmon and stilton', 3000, '{}', 'img/food_10.jpg', 2, 'Meat', 't' ),
 ('Scallop and garam masala gyoza', 'Thin pastry cases stuffed with scallop and garam masala', 2000, '{}', 'img/food_11.jpg', 2, 'Meat', 't' ),
 ('Chorizo and kohlrabi soup', 'Spanish chorizo and kohlrabi combined into creamy soup', 1500, '{}', 'img/food_12.jpg', 2, 'Meat', 't' ),
 ('Pesto and sausage spaghetti', 'Spagetti topped with a blend of basil pesto and spicy sausage', 2500, '{}', 'img/food_13.jpg', 2, 'Meat', 't' ),
@@ -38,12 +29,3 @@ VALUES
 ('Chile-Lime Pineapple Soda', 'If you are a chile fan, you can sub in serranos or jalapeños for the chiles de árbol.', 7000, '{}', 'img/drink_08.jpg', 4, 'Non-Alcoholic', 't' ),
 ('Leche de Tigre', 'Peruvian "tigers milk" features the energizing combo of fresh citrus juice, ginger, and turmeric.', 8000, '{}', 'img/drink_09.jpg', 4, 'Non-Alcoholic', 't' ),
 ('Hibiscus Orange, and Vanilla Agua Fresca', 'True, this concoction is slightly more complex than lemonade. But so are most relationships.', 5000, '{}', 'img/drink_10.jpg', 4, 'Non-Alcoholic', 't' );
-
-
-
-
-
-
-
-
-

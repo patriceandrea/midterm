@@ -1,7 +1,9 @@
 # ERD for midterm project
 
 # Users
+Table name: `users`
 
+Columns:
 - PK `id` — `SERIAL PRIMARY KEY NOT NULL`
 - `name` — `VARCHAR(255)`
 - `email` — `VARCHAR(255)`
@@ -10,8 +12,17 @@
 - `admin` — `BOOLEAN`
 - `created_at` — `TIMESTAMPZ`
 
-# Menu Items
+# Menu Categories
+Table name: `menu_categories`
 
+Columns:
+- PK `id` — `SERIAL PRIMARY KEY NOT NULL`
+- `name` - `VARCHAR(255)`
+
+# Menu Items
+Table name: `menu_items`
+
+Columns:
 - PK `id` — `SERIAL PRIMARY KEY NOT NULL`
 - `name` — `VARCHAR(255)`
 - `description` — `VARCHAR(255)`
@@ -20,14 +31,15 @@
     - e.g. `add_lettuce`, `no_buns`, `fries_for_poutine`
     - each modifier should have its own price and it can be negative
 - `photo` — `VARCHAR(255)`
-- `category` — `SMALLINT`
+- FK `category` — `SMALLINT REFERENCES menu_categories(id) ON DELETE CASCADE`
 - `type` — `TEXT`
     - e.g. vegetarian, gluten-free, spicy
-- `type` — `TEXT`
-- `active`- `BOOLEAN` NOT NULL
+- `active`- `BOOLEAN NOT NULL`
 
 # Orders
+Table name: `orders`
 
+Columns:
 - PK `id` — `SERIAL PRIMARY KEY NOT NULL`
 - FK `user_id` — `INTEGER REFERENCES users(id) ON DELETE CASCADE`
 - `comments` — `VARCHAR(255)`
@@ -40,7 +52,9 @@
 - `rating` — `SMALLINT`
 
 # Order Items
+Table name: `order_items`
 
+Columns:
 - PK `id` — `SERIAL PRIMARY KEY NOT NULL`
 - FK `order_id` — `INTEGER REFERENCES orders(id) ON DELETE CASCADE`
 - `item` — `TEXT` (JSON object stringified)
