@@ -1,6 +1,6 @@
-body {
-  background-color: $ivory;
-  min-height: 100vh;
+main {
+  display: flex;
+  flex-direction: column;
 }
 
 #category-btn-container {
@@ -15,7 +15,7 @@ h2 {
 }
 
 .menu-category {
-  width: 60vw;
+  width: 80vw;
   margin: 2rem auto;
   display: flex;
 }
