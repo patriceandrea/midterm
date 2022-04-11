@@ -21,7 +21,7 @@ h2 {
 
   .card {
     margin: auto;
-    width: 21%;
+    width: 10rem;
 
     .card-body {
       padding: 0.5rem;
@@ -33,12 +33,15 @@ h2 {
 
       .card-text {
         font-size: 0.7rem;
-        margin: 0.5rem 0rem;
+        margin: 0rem 0rem;
       }
 
       .icon-row {
-        height: 1.5rem;
-        border: 2px solid grey;
+        display: flex;
+        justify-content: space-evenly;
+        min-height: 2.2rem;
+        font-size: 1.25rem;
+        padding: 0.5rem 0rem;
       }
 
       .add-to-cart-btn-box {
