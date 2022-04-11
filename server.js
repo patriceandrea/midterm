@@ -7,6 +7,8 @@ const sassMiddleware = require("./lib/sass-middleware");
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
+const bcrypt = require("bcryptjs");
+const cookieSession = require("cookie-session");
 
 // PG database client/connection setup
 const { Pool } = require("pg");
@@ -22,6 +24,10 @@ app.use(morgan("dev"));
 // Set EJS as the HTML templating engine
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieSession({
+  name: "session",
+  keys: ['key1', 'key2']
+}));
 
 app.use(
   "/styles",
@@ -31,10 +37,6 @@ app.use(
     isSass: false, // false => scss, true => sass
   })
 );
-
-// TODO: Use cookie-session middleware -- follow how it was implemented in TinyApp express_server.js
-
-// TODO: Use bcrypt middleware -- follow how it was implemented in TinyApp express_server.js
 
 app.use(express.static("public"));
 
