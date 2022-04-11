@@ -30,4 +30,6 @@ const getCompletedOrdersByUserId = (id) => {
     .finally(() => pool.end());
 };
 
+
+
 getCompletedOrdersByUserId(id).then((x) => console.log(x));

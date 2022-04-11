@@ -27,4 +27,5 @@ const getUserById = (id) => {
     .finally(() => pool.end());
 };
 
+
 getUserById(id).then((x) => console.log(x));
