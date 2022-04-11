@@ -7,7 +7,6 @@ const sassMiddleware = require("./lib/sass-middleware");
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
-const bcrypt = require("bcryptjs");
 const cookieSession = require("cookie-session");
 
 // PG database client/connection setup
@@ -39,6 +38,7 @@ app.use(
 );
 
 app.use(express.static("public"));
+app.use(express.json())
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own

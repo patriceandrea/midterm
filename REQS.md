@@ -67,7 +67,7 @@
 
 `POST /user`
 
-- [ ] If user ID is already in use:
+- [ ] If email or phone number is already in use
   - [ ] Responds with a `404 - Something went wrong` error
 - [ ] If user ID is not already in use:
   - [ ] Create user using the provided request body
@@ -158,7 +158,7 @@
 `GET /admin/menu-items/`
 
 - [ ] Render the restaurant's menu items, sorted by date added from newest to oldest
-- [ ] Each menu item has: 
+- [ ] Each menu item has:
   - [ ] a "View" button which will trigger `GET /admin/menu-items/:id`
   - [ ] an "Edit" button which will trigger `PUT /admin/menu-items/:id`
 
