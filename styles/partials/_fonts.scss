@@ -1,0 +1,24 @@
+// FONT VARIABLES
+$display-font-1: 153% Lemon, cursive;
+$display-font-2: 172% Salsa, cursive;
+$body-font: 100% Overpass, sans-serif;
+
+// TODO : Make $body-font-bold
+// TODO : Make $body-font-italic
+
+//  BASE FONT SIZE
+html {
+  font-size: 21px;
+}
+
+h1 {
+  font: $display-font-1;
+}
+
+h2 {
+  font: $display-font-2;
+}
+
+p, span {
+  font: $body-font;
+}

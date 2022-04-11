@@ -1,0 +1,19 @@
+nav {
+  background-color: $red;
+  position: sticky;
+  height: 5.5rem;
+  width: 100%;
+  padding: 0 4.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  z-index: 99;
+
+  span {
+    margin-right: 2rem;
+  }
+
+  #logo {
+    margin-right: auto;
+  }
+}
