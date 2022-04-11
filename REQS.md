@@ -42,6 +42,9 @@
 
 # BEHAVIOUR
 
+- [ ] When customer adds item to cart, a notification is generated using a Bootstrap Toast (https://getbootstrap.com/docs/5.1/components/toasts/)
+- [ ] Menu items have 1-2 icons indicating their type (meat, vegetarian, alcohol, etc.), and on hover, they each display a self-descriptive tooltip using Bootstrap Tooltips (https://getbootstrap.com/docs/5.1/components/tooltips/)
+
 `NAVBAR`
 
 - [ ] Cart icon clearly indicates when there is one or more item in the cart
@@ -50,6 +53,7 @@
     - [ ] Displays a greeting message to the user in place of the login & register buttons
 - If user is not logged in:
     - [ ] Displays the login & register buttons
+- [ ] STRETCH: On hover, use Bootstrap Tooltip to show the number of items in the cart and the cart total.
 
 `GET /`
 
