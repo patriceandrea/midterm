@@ -1,22 +1,18 @@
-main {
-  display: flex;
-  flex-direction: column;
-}
-
-#category-btn-container {
-  width: 45vw;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-evenly;
-}
-
 h2 {
   margin: 1.1rem 0rem 1.1rem 0rem;
 }
 
+main > h2 {
+  margin-left: 7.7%;
+}
+
+.btn-group {
+  width: 100%;
+}
+
 .menu-category {
   width: 80vw;
-  margin: 2rem auto;
+  margin: 0rem auto;
   display: flex;
 
   .card {
