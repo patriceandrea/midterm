@@ -1,0 +1,31 @@
+.menu-item-summary {
+  width: 33%;
+  margin-left: 2rem;
+  margin-bottom: 0.5rem;
+  padding: 0.8rem 1.2rem;
+  border: 1px solid gray;
+
+  .menu-item {
+    .row.force-height>div {
+      height: 8rem;
+    }
+
+    .quantity, .price {
+      border-left: 1px solid gray;
+    }
+
+    .col-2, .col-3, .col-4 {
+      display:flex;
+
+      span {
+        align-self: center;
+        display: inline-block;
+        margin: auto;
+      }
+    }
+
+    img {
+      width: 6.5rem;
+    }
+  }
+}
