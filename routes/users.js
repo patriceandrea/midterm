@@ -60,7 +60,6 @@ router.post('/login', (req, res) => {
 });
 
 
-
   //Logout
 
   router.post('/logout', (req, res) => {
