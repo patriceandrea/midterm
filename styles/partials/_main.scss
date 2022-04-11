@@ -3,7 +3,7 @@ body {
   min-height: 100vh;
 }
 
-#category-container {
+#category-btn-container {
   width: 45vw;
   margin: 0 auto;
   display: flex;
@@ -12,5 +12,37 @@ body {
 
 h2 {
   margin: 1.1rem 0rem 1.1rem 0rem;
+}
 
+.menu-category {
+  width: 60vw;
+  margin: 2rem auto;
+  display: flex;
+}
+
+.card {
+  margin: auto;
+  width: 21%;
+}
+
+.card-title {
+  font-size: 0.89rem;
+  margin: 0rem 0rem 0rem 0rem;
+}
+
+.card-text {
+  font-size: 0.7rem;
+  margin: 0.5rem 0rem;
+}
+
+.card-body {
+  padding: 0.5rem;
+
+  .add-to-cart-btn-box {
+    text-align: center;
+  }
+
+  .btn {
+    font-size: 0.75rem;
+  }
 }
