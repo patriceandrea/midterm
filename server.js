@@ -19,6 +19,7 @@ db.connect();
 //         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
 app.use(morgan("dev"));
 
+// Set EJS as the HTML templating engine
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 
@@ -30,6 +31,10 @@ app.use(
     isSass: false, // false => scss, true => sass
   })
 );
+
+// TODO: Use cookie-session middleware -- follow how it was implemented in TinyApp express_server.js
+
+// TODO: Use bcrypt middleware -- follow how it was implemented in TinyApp express_server.js
 
 app.use(express.static("public"));
 
