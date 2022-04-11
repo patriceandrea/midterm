@@ -7,12 +7,12 @@ const pool = new Pool({
   database: 'midterm'
 });
 
-
 const addNewUser = (user) => {
   const query = {
     name: 'add_new_user',
     text: `INSERT INTO users (name, email, password, phone, admin, created_at)
-    VALUES($1, $2, $3, $4, $5, $6) RETURNING *;`,values:[user.name, user.email, user.password, user.phone, user.admin, user.created_at],
+    VALUES($1, $2, $3, $4, $5, $6) RETURNING *;`,
+    values: [user.name, user.email, user.password, user.phone, user.admin, user.created_at],
   };
 
   return pool
