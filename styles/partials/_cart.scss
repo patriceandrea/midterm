@@ -1,3 +1,19 @@
+.container-my-bag {
+  width: 55%;
+  margin-left: 2rem;
+  margin-bottom: 0.5rem;
+  padding: 12.8rem 1.2rem;
+  border: 1px solid gray;
+}
+
+.container-order-summary {
+  width: 38%;
+  margin-left: 2rem;
+  margin-bottom: 0.5rem;
+  padding: 12rem 1.2rem;
+  border: 1px solid gray;
+}
+
 .menu-item-summary {
   width: 33%;
   margin-left: 2rem;
@@ -10,12 +26,15 @@
       height: 8rem;
     }
 
-    .quantity, .price {
+    .quantity,
+    .price {
       border-left: 1px solid gray;
     }
 
-    .col-2, .col-3, .col-4 {
-      display:flex;
+    .col-2,
+    .col-3,
+    .col-4 {
+      display: flex;
 
       span {
         align-self: center;
