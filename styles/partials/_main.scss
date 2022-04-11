@@ -18,31 +18,36 @@ h2 {
   width: 80vw;
   margin: 2rem auto;
   display: flex;
-}
 
-.card {
-  margin: auto;
-  width: 21%;
-}
+  .card {
+    margin: auto;
+    width: 21%;
 
-.card-title {
-  font-size: 0.89rem;
-  margin: 0rem 0rem 0rem 0rem;
-}
+    .card-body {
+      padding: 0.5rem;
 
-.card-text {
-  font-size: 0.7rem;
-  margin: 0.5rem 0rem;
-}
+      .card-title {
+        font-size: 0.89rem;
+        margin: 0rem 0rem 0rem 0rem;
+      }
 
-.card-body {
-  padding: 0.5rem;
+      .card-text {
+        font-size: 0.7rem;
+        margin: 0.5rem 0rem;
+      }
 
-  .add-to-cart-btn-box {
-    text-align: center;
-  }
+      .icon-row {
+        height: 1.5rem;
+        border: 2px solid grey;
+      }
 
-  .btn {
-    font-size: 0.75rem;
+      .add-to-cart-btn-box {
+        text-align: center;
+      }
+
+      .btn {
+        font-size: 0.75rem;
+      }
+    }
   }
 }
