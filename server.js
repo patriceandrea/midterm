@@ -33,7 +33,7 @@ app.use(
   "/styles",
   sassMiddleware({
     source: __dirname + "/styles",
-    destination: __dirname + "/public/styles",
+    destination: __dirname + "/public",
     isSass: false, // false => scss, true => sass
   })
 );

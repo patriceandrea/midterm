@@ -6,6 +6,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
   <meta name="author" content="Gonzo Nieto, Patrice Pavico, and Julia Tran">
   <!-- TODO <meta name="description" content=""> -->
   <title>Home Page</title>
@@ -26,8 +27,7 @@
   <link rel="stylesheet" href="/vendor/normalize-8.0.1.css" type="text/css" />
 
   <!-- App CSS -->
-  <!-- TODO -- Consider changing '/styles/style.css' location to `/style.css` since it is the only CSS file -->
-  <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+  <link rel="stylesheet" href="style.css" type="text/css" />
 
   <!----- External JS ----->
   <!-- Bootstrap -->
@@ -78,17 +78,17 @@
           <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-light">
               <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
 
-                <li>
-                  <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
-                      <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
-                  <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
-                      <li class="w-100">
-                          <a href="/admin" class="nav-link px-0"> <span class="d-none d-sm-inline">Current Orders</span></a>
-                      </li>
-                      <li>
-                          <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Closed Orders</span></a>
-                      </li>
-                  </ul>
+              <li>
+                <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                    <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
+                <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                    <li class="w-100">
+                        <a href="/admin" class="nav-link px-0"> <span class="d-none d-sm-inline">Current Orders</span></a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Closed Orders</span></a>
+                    </li>
+                </ul>
               </li>
 
               <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
