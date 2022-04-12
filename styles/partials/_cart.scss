@@ -1,98 +1,73 @@
-// .order-summary-box {
-//   display: inline-block;
-//   border: 2px solid black;
-//   width: 250px;
-//   height: 250px;
-// }
+.flex-row {
+  align-items: center;
+  box-shadow: none;
+  transition: 0.24s;
+}
 
-// .money-summary-box {
-//   display: inline-block;
-//   border: 2px solid blue;
-//   width: 250px;
-//   height: 250px;
-// }
+.flex-row:hover {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  transition: 0.24s;
+}
 
-.order-summary-box {
+#my-bag {
   display: inline-block;
-  width: 45%;
-  margin-left: 2rem;
-  margin-bottom: 0.5rem;
+  vertical-align: top;
+  margin: 0rem 0rem 3rem 0rem;
+  padding: 0rem 0.9rem 1.4rem 0.9rem;
   border: 1px solid gray;
   text-align: center;
   border-radius: 1rem;
-}
 
-.money-summary-box {
-  display: inline-block;
-  width: 35%;
-  margin-left: 2rem;
-  border: 1px solid gray;
-  padding-bottom: 1rem;
-  text-align: center;
-  border-radius: 1.5rem;
-}
+  .menu-item-summary {
+    margin: 0rem 0rem 0rem 0rem;
+    padding: 0rem 0rem 0rem 0rem;
+    border: 1px solid gray;
 
-.menu-item-summary {
-  width: 94%;
-  margin-left: 2rem;
-  margin-bottom: 0.5rem;
-  padding: 0.8rem 1.2rem;
-  border: 1px solid gray;
+    .menu-item {
+      .row.force-height>div {
+        height: 8rem;
+      }
 
-  .menu-item {
-    .row.force-height>div {
-      height: 8rem;
-    }
-
-    .quantity,
-    .price {
-      border-left: 1px solid gray;
-    }
-
-    .col-2,
-    .col-3,
-    .col-4 {
-      display: flex;
-      flex-direction: column;
-
-      span {
-        align-self: center;
-        display: inline-block;
-        margin: auto;
-
+      .quantity,
+      .price {
+        border-left: 1px solid gray;
+      }
+      img {
+        width: 6.5rem;
       }
     }
-
-    img {
-      width: 6.5rem;
-    }
   }
 }
 
-
-.summary-title {
-  width: 94%;
-  margin-bottom: 1.5rem;
-  padding: 0.8rem 1.2rem;
+#order-summary-box {
+  display: inline-block;
+  margin-left: 3.1rem;
   border: 1px solid gray;
+  padding: 0rem 0.9rem 0.9rem 0.9rem;
+  text-align: center;
+  border-radius: 1.5rem;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 
+  .summary-title {
+    width: 100%;
+    margin-bottom: 0.7rem;
+    padding: 0rem 0rem;
 
-  .summary-value {
-    border-left: 1px solid gray;
-  }
+    .order-summary-text {
+      margin-bottom: 0.5rem;
+    }
 
-  .col-2,
-  .col-4 {
-    display: flex;
+    .title {
+      display: inline-block;
+      text-align: end;
+      margin-right: 0.6rem;
+    }
 
-    span {
-      text-align: right;
+    .summary-value {
+      display: inline-block;
+      border-left: 1px solid gray;
+      text-align: start;
+      padding-left: 0.6rem;
     }
   }
-
-  .col-4 span {
-    font-weight: bold;
-  }
-
-
 }
