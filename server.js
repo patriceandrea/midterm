@@ -1,6 +1,6 @@
 // load .env data into process.env
 require("dotenv").config();
-const {getAllMenuItems} = require("./lib/db");
+const { getAllMenuItems } = require("./lib/db");
 
 // Web server config
 const PORT = process.env.PORT || 8080;
@@ -63,7 +63,9 @@ app.get("/dev", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  getAllMenuItems().then((x) => console.log(x));
+  getAllMenuItems()
+    .then((menuItems) => res.send(menuItems))
+    .catch(error => res.send(error))
   res.render("index");
 });
 
