@@ -26,18 +26,18 @@
 
 # DISPLAY REQUIREMENTS
 
-- [ ] Nav bar fixed to the top of the page
-- [ ] Nav bar has:
-    - [ ] Logo
-    - [ ] Login button
-    - [ ] Register button
-    - [ ] Cart icon
-- [ ] Implement distinct colour palettes for the restaurant front-end and the admin console
+- [X] Nav bar fixed to the top of the page
+- [X] Nav bar has:
+    - [X] Logo
+    - [X] Login button
+    - [X] Register button
+    - [X] Cart icon
+- [x] Implement distinct colour palettes for the restaurant front-end and the admin console
 - [ ] Design logos for the restaurant and the business we are emulating
 
 `/`
 
-- [ ] Menu items are grouped by category
+- [X] Menu items are grouped by category
 - [ ] Above the menu items, there are navigation links that will scroll the user to the section the clicked on
 
 # BEHAVIOUR
@@ -57,7 +57,7 @@
 
 `GET /`
 
-- [ ] Render the restaurant’s homepage with all menu items listed and grouped by category
+- [X] Render the restaurant’s homepage with all menu items listed and grouped by category
 - [ ] A menu with one button per category allows the user to auto-scroll to that category
 
 ### User Login Routes
@@ -120,7 +120,7 @@
 
 `GET /cart`
 
-- [ ] Render the cart view to show
+- [X] Render the cart view to show
     - [ ] all items currently in the cart
     - [ ] price card with subtotal, taxes, and total
 - [ ] Allows customer to add a comment to their order
@@ -139,7 +139,7 @@
 `GET /admin`
 
 - [ ] If user is logged in as admin:
-    - [ ] Renders a view that displays the restaurant’s open orders
+    - [X] Renders a view that displays the restaurant’s open orders
     - [ ] Has a toggle to display completed orders
 - [ ] If user is not logged in:
     - [ ] Redirects to `/admin/login`
