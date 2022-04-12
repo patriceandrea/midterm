@@ -1,5 +1,6 @@
 body{
   font-family: 'Overpass', sans-serif;
+  background-color: white;
 }
 
 
@@ -8,8 +9,19 @@ nav {
   display: flex;
   justify-content: space-between;
   color: white;
+  
 
 }
+
+.dropdown{
+  margin-top: 2em;
+}
+
+
+#main-content {
+  margin-top: 10em;
+}
+
 
 caption {
   font-size: 1.2em ;
@@ -18,25 +30,6 @@ caption {
 }
 
 
-#adminIcon {
-height: 1.3em;
-width: 1.3em;
-margin-right: .5em;
-}
-
-
-#adminIcon:hover{
-  color: black;
-}
-
-#settings{
-height: 1.3em;
-width: 1.3em;
-}
-
-#settings:hover{
-  color: black;
-  }
 
 
 #snaq:hover{
@@ -46,8 +39,7 @@ width: 1.3em;
 
 
 .table {
-//  margin-left: 2em;
-//  margin-right: 2em;
+
 width: 95%;
 margin-left: auto;
 }
