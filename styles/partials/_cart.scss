@@ -1,64 +1,84 @@
+// .order-summary-box {
+//   display: inline-block;
+//   border: 2px solid black;
+//   width: 250px;
+//   height: 250px;
+// }
+
+// .money-summary-box {
+//   display: inline-block;
+//   border: 2px solid blue;
+//   width: 250px;
+//   height: 250px;
+// }
+
 .order-summary-box {
   display: inline-block;
-  border: 2px solid black;
-  width: 250px;
-  height: 250px;
+  width: 45%;
+  margin-left: 2rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid gray;
 }
 
 .money-summary-box {
   display: inline-block;
-  border: 2px solid blue;
-  width: 250px;
-  height: 250px;
+  width: 35%;
+  margin-left: 2rem;
+  border: 1px solid gray;
+  padding-bottom: 1rem;
 }
 
-// .container-my-bag {
-//   width: 55%;
-//   margin-left: 2rem;
-//   margin-bottom: 0.5rem;
-//   padding: 12.8rem 1.2rem;
-//   border: 1px solid gray;
-// }
+.menu-item-summary {
+  width: 94%;
+  margin-left: 2rem;
+  margin-bottom: 0.5rem;
+  padding: 0.8rem 1.2rem;
+  border: 1px solid gray;
 
-// .container-order-summary {
-//   width: 38%;
-//   margin-left: 2rem;
-//   margin-bottom: 0.5rem;
-//   padding: 12rem 1.2rem;
-//   border: 1px solid gray;
-// }
+  .menu-item {
+    .row.force-height>div {
+      height: 8rem;
+    }
 
-// .menu-item-summary {
-//   width: 33%;
-//   margin-left: 2rem;
-//   margin-bottom: 0.5rem;
-//   padding: 0.8rem 1.2rem;
-//   border: 1px solid gray;
+    .quantity,
+    .price {
+      border-left: 1px solid gray;
+    }
 
-//   .menu-item {
-//     .row.force-height>div {
-//       height: 8rem;
-//     }
+    .col-2,
+    .col-3,
+    .col-4 {
+      display: flex;
 
-//     .quantity,
-//     .price {
-//       border-left: 1px solid gray;
-//     }
+      span {
+        align-self: center;
+        display: inline-block;
+        margin: auto;
+      }
+    }
 
-//     .col-2,
-//     .col-3,
-//     .col-4 {
-//       display: flex;
+    img {
+      width: 6.5rem;
+    }
+  }
+}
 
-//       span {
-//         align-self: center;
-//         display: inline-block;
-//         margin: auto;
-//       }
-//     }
 
-//     img {
-//       width: 6.5rem;
-//     }
-//   }
-// }
+.summary-title {
+  width: 94%;
+  margin-bottom: 1.5rem;
+  padding: 0.8rem 1.2rem;
+  border: 1px solid gray;
+
+
+  .summary-value {
+    border-left: 1px solid gray;
+  }
+
+  .col-2,
+  .col-4 {
+    display: flex;
+
+  }
+
+}
