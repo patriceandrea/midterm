@@ -1,3 +1,7 @@
+body{
+  font-family: 'Overpass', sans-serif;
+}
+
 
 
 nav {
@@ -7,35 +11,45 @@ nav {
 
 }
 
-#adminIcon {
-height: 1.6em;
-width: 1.6em;
+caption {
+  font-size: 1.2em ;
+  font-weight: bold;
+  color: black;
 }
 
-#settings{
-height: 1.6em;
-width: 1.6em;
+
+#adminIcon {
+height: 1.3em;
+width: 1.3em;
+margin-right: .5em;
 }
+
 
 #adminIcon:hover{
   color: black;
 }
 
+#settings{
+height: 1.3em;
+width: 1.3em;
+}
+
+#settings:hover{
+  color: black;
+  }
+
+
 #snaq:hover{
   color: black;
 }
 
+
+
 .table {
 //  margin-left: 2em;
 //  margin-right: 2em;
-width: 80%;
+width: 95%;
 margin-left: auto;
 }
 
-h2 {
-margin-left: 6em;
-}
 
-h2:hover{
-  color: white;
-}
