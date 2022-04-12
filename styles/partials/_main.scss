@@ -1,48 +1,64 @@
-main {
-  display: flex;
-  flex-direction: column;
+header {
+  img {
+    filter: brightness(0.45);
+  }
+
+  .centered {
+    color: $ivory;
+    position: absolute;
+    width: fit-content;
+    top: 35.6%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
-#category-btn-container {
-  width: 45vw;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-evenly;
+main > h2 {
+  margin: 1.6rem 0rem 1.6rem 9.5%;
 }
 
-h2 {
-  margin: 1.1rem 0rem 1.1rem 0rem;
+.btn-group {
+  width: 100%;
 }
 
 .menu-category {
-  width: 80vw;
-  margin: 2rem auto;
-  display: flex;
-}
-
-.card {
+  width: 88%;
   margin: auto;
-  width: 21%;
-}
+  display: flex;
+  justify-content: center;
 
-.card-title {
-  font-size: 0.89rem;
-  margin: 0rem 0rem 0rem 0rem;
-}
+  .card {
+    width: 10rem;
+    margin-left: 1.6rem;
 
-.card-text {
-  font-size: 0.7rem;
-  margin: 0.5rem 0rem;
-}
+    .card-body {
+      padding: 0.5rem;
 
-.card-body {
-  padding: 0.5rem;
+      .card-title {
+        font-size: 0.89rem;
+        margin: 0rem 0rem 0rem 0rem;
+      }
 
-  .add-to-cart-btn-box {
-    text-align: center;
-  }
+      .card-text {
+        font-size: 0.7rem;
+        margin: 0rem 0rem;
+      }
 
-  .btn {
-    font-size: 0.75rem;
+      .icon-row {
+        display: flex;
+        justify-content: space-evenly;
+        min-height: 2.2rem;
+        font-size: 1.25rem;
+        padding: 0.5rem 0rem;
+      }
+
+      .add-to-cart-btn-box {
+        text-align: center;
+      }
+
+      .btn {
+        font-size: 0.75rem;
+      }
+    }
   }
 }
