@@ -22,7 +22,7 @@ const sendCustomerMessage = (name, phone, waitTime) => {
   console.log("sending message...");
   client.messages
     .create({
-      body: `Hi ${name},Your order has been accepted! Estimated wait time: ${waitTime}.`,
+      body: `Hi ${name},Your order has been accepted! Estimated wait time: ${waitTime} minutes.`,
       from: process.env.TWILIO_NUMBER,
       to: phone
     })
@@ -33,5 +33,6 @@ const sendCustomerMessage = (name, phone, waitTime) => {
 };
 
 sendRestaurantMessage();
-sendCustomerMessage('Julia', '+16478956858', '15mins');
+sendCustomerMessage('Julia', '+16478956858', '15');
 
+module.exports = { sendRestaurantMessage, sendCustomerMessage };
