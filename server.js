@@ -7,7 +7,6 @@ const sassMiddleware = require("./lib/sass-middleware");
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
-const bcrypt = require("bcryptjs");
 const cookieSession = require("cookie-session");
 
 // PG database client/connection setup
@@ -44,11 +43,13 @@ app.use(express.static("public"));
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
 const ordersRoutes = require("./routes/order");
+const adminRoutes = require("./routes/admin");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/order", ordersRoutes());
+app.use("/admin", adminRoutes());
 // Note: mount other resources here, using the same pattern above
 
 // Home page
