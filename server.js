@@ -1,6 +1,6 @@
 // load .env data into process.env
 require("dotenv").config();
-const {getAllMenuItems} = require("./lib/db");
+const { getAllMenuItems } = require("./lib/db");
 
 // Web server config
 const PORT = process.env.PORT || 8080;
@@ -41,7 +41,8 @@ app.use(
 );
 
 app.use(express.static("public"));
-app.use(express.json())
+app.use(express.static("img"));
+app.use(express.json());
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
@@ -65,8 +66,11 @@ app.get("/dev", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  getAllMenuItems().then((x) => console.log(x));
-  res.render("index");
+  getAllMenuItems()
+    .then((menuItems) => {
+      res.render("index", { menuItems: menuItems });
+    })
+    .catch(error => res.send(error));
 });
 
 app.get("/cart", (req, res) => {
