@@ -283,6 +283,8 @@
             <td>
               <%= menuItems[i].created_at %>
             </td>
+            <% console.log("Check 1", menuItems[i].name); %>
+            <% console.log("Check 1", menuItems[i].items); %>
             <td>
               <!-- Wait List Drop Down-->
               <div class="btn-group">
@@ -300,9 +302,10 @@
               </div>
       </div>
       <!-- Completed Button -->
-      <td><form action="/admin/complete" method="post"><button type="button" class="btn btn-outline-success">Completed</button></form>
+      <td><button type="button" class="btn btn-outline-success">Completed</button>
       </td>
       </tr>
+
       <% }%>
         </tbody>
         </table>
