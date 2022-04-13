@@ -1,9 +1,14 @@
-// Client facing scripts here
-// $(document).ready(function () {
-//   console.log("ready!");
+$(document).ready(function() {
+  console.log("ready!");
 
-//   loadMenuItems();
+  const loadMenuItems = () => {
+    $.ajax('/menu/', { method: 'GET' })
+      .then((data) => {
+        console.log(data);
+      });
+  };
 
+  loadMenuItems();
 
 //   const renderMenuItems = function (items) {
 //     const $menuContainer = $('.menu-category');
@@ -34,14 +39,4 @@
 
 //     return MenuCardHTML;
 //   };
-
-
-//   function loadMenuItems() {
-//     $.ajax('/', { method: 'GET' })
-//       .then(function (data) {
-//         console.log('Success! ');
-//         // $('#tweet-text').val('');
-//         renderMenuItems(data);
-//       });
-//   };
-// });
+});
