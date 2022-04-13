@@ -3,7 +3,7 @@ const router = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    res.render("views_order");
+    // TODO - RETURN JSON OBJECT OF ALL ORDERS
   });
   return router;
 };
