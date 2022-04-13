@@ -46,7 +46,7 @@
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/app.js"></script>
-  <script type="text/javascript" src="/adminServer.js"></script>
+  <script type="text/javascript" src="/scripts/adminPortal.js"></script>
 
 </head>
 
@@ -163,160 +163,58 @@
               </tr>
             </thead>
             <tbody>
-              <!-- <tr>
-                <td>Julia</td>
-                <td>1</td>
-                <td>1.Burger <br> 2.Pizza</td>
-                <td>Sauce on the side please :)</td>
-                <td>3:45 pm</td>
+
+              <tr class="pendingOrders" id="orders">
+                <% for (let i=0; i < menuItems.length; i++){ %>
+                  <td>
+                    <%= menuItems[i].name %>
+                  </td>
+                  <td>
+                    <%= menuItems[i].id %>
+                  </td>
+                  <td>
+                    <%= menuItems[i].items %>
+                  </td>
+                  <td>
+                    <%= menuItems[i].comments %>
+                  </td>
+                  <td>
+                    <%= menuItems[i].created_at %>
+                  </td>
+                  <% console.log("Check 1", menuItems[i].name); %>
+                    <% console.log("Check 1", menuItems[i].items); %>
+                      <td>
+                        <!-- Wait List Drop Down-->
+                        <div class="btn-group">
+
+                          <form method="POST" action="/admin/waitTime" class="waitList form-inline"></form>
+
+                          <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                            <option type="submit" selected value="15">15 mins</option>
+                            <option type="submit" value="20">20 mins</option>
+                            <option type="submit" value="30">30 mins</option>
+                            <option type="submit" value="45">45 mins</option>
+                            <option type="submit" value="60">60 mins</option>
+                          </select>
 
 
-                <td>
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown"
-                      aria-expanded="false">
-                      Wait Time
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">15 mins</a></li>
-                      <li><a class="dropdown-item" href="#">20 mins</a></li>
-                      <li><a class="dropdown-item" href="#">30 mins</a></li>
-                      <li><a class="dropdown-item" href="#">45 mins</a></li>
-                      <li><a class="dropdown-item" href="#">60 mins</a></li>
-                    </ul>
-                  </div>
-                </td>
-
-                <td><button type="button" class="btn btn-outline-success">Completed</button></td>
-              </tr>
-              <tr>
-                <td>Gonzo</td>
-                <td>2</td>
-                <td>1.Burger <br> 2.Pizza</td>
-                <td>No pickles on the burger</td>
-                <td>6:45 pm</td>
-                <td>
-
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown"
-                      aria-expanded="false">
-                      Wait Time
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">15 mins</a></li>
-                      <li><a class="dropdown-item" href="#">20 mins</a></li>
-                      <li><a class="dropdown-item" href="#">30 mins</a></li>
-                      <li><a class="dropdown-item" href="#">45 mins</a></li>
-                      <li><a class="dropdown-item" href="#">60 mins</a></li>
-                    </ul>
-                  </div>
-                </td>
-
-                <td><button type="button" class="btn btn-outline-success">Completed</button></td>
-              </tr>
-              <tr>
-                <td>Pat</td>
-                <td>3</td>
-                <td>1.Burger <br> 2.Pizza</td>
-                <td>No mayo</td>
-                <td>7:45 pm</td>
-                <td>
-
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown"
-                      aria-expanded="false">
-                      Wait Time
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">15 mins</a></li>
-                      <li><a class="dropdown-item" href="#">20 mins</a></li>
-                      <li><a class="dropdown-item" href="#">30 mins</a></li>
-                      <li><a class="dropdown-item" href="#">45 mins</a></li>
-                      <li><a class="dropdown-item" href="#">60 mins</a></li>
-                    </ul>
-                  </div>
-                </td>
-
-                <td><button type="button" class="btn btn-outline-success">Completed</button></td>
-              </tr>
-              <tr>
-                <td>Robert</td>
-                <td>7</td>
-                <td>1.Burger <br> 2.Pizza</td>
-                <td>Well Done Pizza</td>
-                <td>8:45 pm</td>
-
-                <td>
-
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown"
-                      aria-expanded="false">
-                      Wait Time
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">15 mins</a></li>
-                      <li><a class="dropdown-item" href="#">20 mins</a></li>
-                      <li><a class="dropdown-item" href="#">30 mins</a></li>
-                      <li><a class="dropdown-item" href="#">45 mins</a></li>
-                      <li><a class="dropdown-item" href="#">60 mins</a></li>
-                    </ul>
-                  </div>
+                          </form>
+                        </div>
         </div>
-
-        <td><button type="button" class="btn btn-outline-success">Completed</button></td>
+        <!-- Completed Button -->
+        <td><button type="button" class="btn btn-outline-success">Completed</button>
         </td>
-        </tr> -->
-        <tr class="pendingItems" id="Items">
-          <% for (let i=0; i < menuItems.length; i++){ %>
-            <td>
-              <%= menuItems[i].name %>
-            </td>
-            <td>
-              <%= menuItems[i].id %>
-            </td>
-            <td>
-              <%= menuItems[i].items %>
-            </td>
-            <td>
-              <%= menuItems[i].comments %>
-            </td>
-            <td>
-              <%= menuItems[i].created_at %>
-            </td>
-            <% console.log("Check 1", menuItems[i].name); %>
-            <% console.log("Check 1", menuItems[i].items); %>
-            <td>
-              <!-- Wait List Drop Down-->
-              <div class="btn-group">
-                <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Wait Time
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">15 mins</a></li>
-                  <li><a class="dropdown-item" href="#">20 mins</a></li>
-                  <li><a class="dropdown-item" href="#">30 mins</a></li>
-                  <li><a class="dropdown-item" href="#">45 mins</a></li>
-                  <li><a class="dropdown-item" href="#">60 mins</a></li>
-                </ul>
-              </div>
+        </tr>
+
+        <% }%>
+          </tbody>
+          </table>
+
+
+
       </div>
-      <!-- Completed Button -->
-      <td><button type="button" class="btn btn-outline-success">Completed</button>
-      </td>
-      </tr>
-
-      <% }%>
-        </tbody>
-        </table>
-
-
-
     </div>
     </div>
-    </div>
-
-
 
 
 
