@@ -64,9 +64,10 @@ app.get("/dev", (req, res) => {
 
 app.get("/", (req, res) => {
   getAllMenuItems()
-    .then((menuItems) => res.send(menuItems))
-    .catch(error => res.send(error))
-  res.render("index");
+    .then((menuItems) => {
+      res.render("index", { menuItems: menuItems });
+    })
+    .catch(error => res.send(error));
 });
 
 app.get("/cart", (req, res) => {
