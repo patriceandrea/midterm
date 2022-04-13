@@ -10,12 +10,15 @@ const app = express();
 const morgan = require("morgan");
 const cookieSession = require("cookie-session");
 
-// PG database client/connection setup
-const { Pool } = require("pg");
-const dbHelpers = require("./lib/db.js");
+// const { Pool } = require("pg");
+// const db = new Pool(dbHelpers.dbParams);
+// db.connect();
 
-const db = new Pool(dbHelpers.dbParams);
-db.connect();
+// PG database client/connection setup
+const database = require("./lib/db.js");
+
+
+
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
@@ -49,12 +52,15 @@ app.use(express.json());
 const usersRoutes = require("./routes/users");
 const ordersRoutes = require("./routes/order");
 const adminRoutes = require("./routes/admin");
+const menuRoutes = require("./routes/menu");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
-app.use("/api/users", usersRoutes(db));
-app.use("/order", ordersRoutes());
-app.use("/admin", adminRoutes());
+app.use("/api/users", usersRoutes(database));
+app.use("/order", ordersRoutes(database));
+app.use("/admin", adminRoutes(database));
+app.use("/menu", menuRoutes(database));
+
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -66,11 +72,17 @@ app.get("/dev", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  getAllMenuItems()
-    .then((menuItems) => {
-      res.render("index", { menuItems: menuItems });
-    })
-    .catch(error => res.send(error));
+  // getAllMenuItems()
+  //   .then((menuItems) => {
+  //     // BUG FIXING: THIS IS NOT THE ISSUE, menuItems ARE RETURNED AS EXPECTED
+  //     res.render("index", { menuItems: menuItems });
+  //   })
+  //   .catch(error => res.send(error));
+  res.render("index");
+});
+
+app.get("/menu", (req, res) => {
+  res.render("menu");
 });
 
 app.get("/cart", (req, res) => {
