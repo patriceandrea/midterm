@@ -9,11 +9,16 @@ nav {
   justify-content: right;
   z-index: 99;
 
+  * {
+    color: $ivory;
+  }
+
   span {
     margin-right: 2rem;
   }
 
   #logo {
     margin-right: auto;
+    text-decoration: none;
   }
 }
