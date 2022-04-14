@@ -1,6 +1,20 @@
 const express = require('express');
 const router = express.Router();
 
+const sendCustomerMessage = (name, phone) => {
+  console.log("sending message...");
+  client.messages
+    .create({
+      body: `Hi ${name},Your order is ready! Thank you for ordering with us.`,
+      from: process.env.TWILIO_NUMBER,
+      to: phone
+    })
+    .then(message => console.log("message id: " + message.sid))
+    .catch(err => {
+      console.log(err);
+    });
+};
+
 module.exports = (db) => {
   router.get("/", (req, res) => {
     db.getAllPendingOrders()
@@ -9,7 +23,7 @@ module.exports = (db) => {
 
   })
 
- 
+
 
 
   router.post("/complete", (req, res) => {
