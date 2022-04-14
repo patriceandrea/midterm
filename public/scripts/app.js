@@ -1,9 +1,9 @@
-$(document).ready(function () {
+$(document).ready(() => {
 
   const loadMenu = () => {
     $.ajax('/menu', { method: 'GET' })
       .then((menuItems) => renderMenu(menuItems))
-      .catch(err => console.error('query error', err.stack));
+      .catch((err) => console.error('query error', err.stack));
   };
   loadMenu();
 
