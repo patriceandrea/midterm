@@ -9,12 +9,30 @@ $(document).ready(() => {
   loadPendingOrders();
 
   // Takes order data and returns HTML to be rendered to the admin page
-  const createOrderElement = (order) => $(`<p>${Object.keys(order)}</p>`);
+  const createOrderElement = (order) => $(`
+    <div class="d-flex order">
+      <div class="col-1 order-id">
+        <div>${order.id}</div>
+      </div>
+      <div class="col-2 order-userID">
+        <div>${order.user_id}</div>
+      </div>
+      <div class="col-2 order-createdAt">
+        <div>${order.created_at}</div>
+      </div>
+      <div class="col-5 order-comments">
+        <div>${order.comments}</div>
+      </div>
+      <div class="col-3 order-total">
+        <div>${order.total_price}</div>
+      </div>
+    </div>`
+  );
 
   const renderOrders = (orders) => {
     orders
       .map((order) => createOrderElement(order))
-      .forEach((orderElement) => $('#main-content').prepend(orderElement));
+      .forEach((orderElement) => $('#main-content').append(orderElement));
   };
 
 });
