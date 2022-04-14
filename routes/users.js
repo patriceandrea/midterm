@@ -14,7 +14,7 @@ const {addNewUser, getUserByEmail} = require("../lib/db");
 
 module.exports = (db) => {
 // Create New User
-// TODO if user has same email or phone number
+// TODO if user has same email or phone number as an existing user, and if so, reject the new user entry
   router.post('/register', (req, res) => {
     const user = req.body;
     user.password = bcrypt.hashSync(user.password, 12);

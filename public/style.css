@@ -94,11 +94,15 @@ nav {
   justify-content: right;
   z-index: 99;
 }
+nav * {
+  color: #FEE6BE;
+}
 nav span {
   margin-right: 2rem;
 }
 nav #logo {
   margin-right: auto;
+  text-decoration: none;
 }
 
 header {
@@ -210,3 +214,5 @@ caption {
   text-align: start;
   padding-left: 0.6rem;
 }
+
+/*# sourceMappingURL=style.css.map */

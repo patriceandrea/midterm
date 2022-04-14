@@ -194,3 +194,4 @@
 - [ ] Customers can place an order for a future date
 - [ ] Hosting (e.g. `heroku`, `netlify`, GitHub Pages, AWS, or Azure)
 - [ ] Allow admin to create other admin accounts
+- [ ] Improve load times for menu item images
