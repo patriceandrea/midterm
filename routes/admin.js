@@ -7,14 +7,14 @@ module.exports = (db) => {
     getAllPendingOrders().then((menuItems) => {
       res.render("admin", {menuItems: menuItems});
     })
-    .catch(e => res.send(e));
+      .catch(e => res.send(e));
   });
 
-  router.post("/complete", (req, res) => {
-    setOrderCompleteWithOrderId().then((menuItems) => {
-      res.render("admin", {menuItems: menuItems});
-    })
-    .catch(e => res.send(e));
-  });
-  return router;
-}
+  // router.post("/complete", (req, res) => {
+  //   setOrderCompleteWithOrderId().then((menuItems) => {
+  //     res.render("admin", {menuItems: menuItems});
+  //   })
+  //     .catch(e => res.send(e));
+  // });
+  // return router;
+};
