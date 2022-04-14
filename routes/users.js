@@ -8,13 +8,12 @@
 const express = require('express');
 const router = express.Router();
 // const bcrypt = require("bcryptjs");
-// const {addNewUser, getUserByEmail} = require("../lib/db");
+
 
 
 
 module.exports = (db) => {
-// Create New User
-// TODO if user has same email or phone number as an existing user, and if so, reject the new user entry
+
 
 router.get('/login', (req, res) => {
   res.render("login");
@@ -53,6 +52,7 @@ router.post('/login', (req, res) => {
 
 
 router.post('/register', (req, res) => {
+  res.redirect("/");
     // const user = req.body;
     // user.password = bcrypt.hashSync(user.password, 12);
 

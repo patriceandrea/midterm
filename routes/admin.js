@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 // const bcrypt = require("bcryptjs");
-// const { getUserByEmail} = require("../lib/db");
+
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
