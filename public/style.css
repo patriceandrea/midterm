@@ -137,27 +137,22 @@ nav {
   color: white;
 }
 
-.dropdown {
-  margin-top: 2em;
-}
-
-#main-content {
-  margin-top: 10em;
-}
-
-caption {
-  font-size: 1.2em;
-  font-weight: bold;
-  color: black;
-}
-
 #snaq:hover {
   color: black;
 }
 
-.table {
-  width: 95%;
-  margin-left: auto;
+.order {
+  border: 1px solid gray;
+  align-items: center;
+}
+.order .order-id,
+.order .order-userID,
+.order .order-createdAt,
+.order .order-total {
+  text-align: center;
+}
+.order .order-comments {
+  font-size: 16px;
 }
 
 .flex-row {
@@ -224,5 +219,3 @@ caption {
   text-align: start;
   padding-left: 0.6rem;
 }
-
-/*# sourceMappingURL=style.css.map */
