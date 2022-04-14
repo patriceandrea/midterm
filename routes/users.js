@@ -16,7 +16,7 @@ module.exports = (db) => {
 
 
 router.get('/login', (req, res) => {
-  res.render("login");
+  res.render("customer_login");
 });
 
 
