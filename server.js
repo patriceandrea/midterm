@@ -49,12 +49,14 @@ app.use(express.json());
 const usersRoutes = require("./routes/users");
 const ordersRoutes = require("./routes/order");
 const adminRoutes = require("./routes/admin");
+const cartRoutes = require("./routes/cart");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/users", usersRoutes(db));
-app.use("/order", ordersRoutes());
-app.use("/admin", adminRoutes());
+app.use("/order", ordersRoutes(db));
+app.use("/admin", adminRoutes(db));
+app.use("/cart", cartRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
 // Home page
