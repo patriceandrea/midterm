@@ -26,7 +26,7 @@ app.use(
   "/styles",
   sassMiddleware({
     source: __dirname + "/styles",
-    destination: __dirname + "/public",
+    destination: __dirname + "/public/styles",
     debug: true,
     isSass: false, // false => scss, true => sass
     outputStyle: 'expanded'
