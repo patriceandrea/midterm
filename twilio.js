@@ -32,7 +32,6 @@ const sendCustomerMessage = (name, phone, waitTime) => {
     });
 };
 
-sendRestaurantMessage();
-sendCustomerMessage('Julia', '+16478956858', '15');
+
 
 module.exports = { sendRestaurantMessage, sendCustomerMessage };
