@@ -34,154 +34,15 @@
     </div>
   </nav>
 
-  <main id="#main-content">
-
-    <!-- Side Navigation Bar -->
-
-    <div class="container-fluid">
-      <div class="row flex-nowrap">
-        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-light">
-          <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-
-            <li>
-              <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
-                <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
-              <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
-                <li class="w-100">
-                  <a href="/admin" class="nav-link px-0"> <span class="d-none d-sm-inline">Current Orders</span></a>
-                </li>
-                <li>
-                  <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Closed Orders</span></a>
-                </li>
-              </ul>
-            </li>
-
-            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-              <li class="nav-item">
-
-
-                <a href="/" class="nav-link align-middle px-0">
-                  <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Menu Page</span>
-                </a>
-              </li>
-              <li>
-                <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                  <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
-                <ul class="collapse  nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
-                  <li>
-                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Analytics</span> </a>
-                  </li>
-                </ul>
-              </li>
-
-
-              <li>
-                <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                  <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span> </a>
-                <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
-                  <li class="w-100">
-                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Starters</span> </a>
-                  </li>
-                  <li>
-                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Mains</span> </a>
-                  </li>
-                  <li>
-                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Desserts</span></a>
-                  </li>
-                  <li>
-                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Beverages</span></a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="#" class="nav-link px-0 align-middle">
-                  <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
-              </li>
-            </ul>
-            <hr>
-
-          </div>
-        </div>
-
-        <!-- Table -->
-        <div class="col py-3">
-          <table class="table table-centered  mb-0 table-hover">
-            <caption align="top">Current Orders :  <%=  menuItems.length %></caption>
-            <thead class="table-light">
-
-              <tr>
-                <th>Name</th>
-                <th>Order #</th>
-                <th>Order</th>
-                <th>Requests</th>
-                <th>Created At</th>
-                <th> Wait Time</th>
-                <th>Mark Completed</th>
-              </tr>
-            </thead>
-            <tbody>
-
-              <tr class="pendingOrders" id="orders">
-                <% for (let i=0; i < menuItems.length; i++){ %>
-                  <td>
-                    <%= menuItems[i].name %>
-                  </td>
-                  <td>
-                    <%= menuItems[i].id %>
-                  </td>
-                  <td>
-                    <%= menuItems[i].items %>
-                  </td>
-                  <td>
-                    <%= menuItems[i].comments %>
-                  </td>
-                  <td>
-                    <%= menuItems[i].created_at %>
-                  </td>
-                  <% console.log("Check 1", menuItems[i].name); %>
-                    <% console.log("Check 1", menuItems[i].items); %>
-                      <td>
-                        <!-- Wait List Drop Down-->
-                        <div class="btn-group">
-
-                          <form method="POST" action="/admin/waitTime" class="waitList form-inline"></form>
-
-                          <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                            <option type="submit" selected value="15">15 mins</option>
-                            <option type="submit" value="20">20 mins</option>
-                            <option type="submit" value="30">30 mins</option>
-                            <option type="submit" value="45">45 mins</option>
-                            <option type="submit" value="60">60 mins</option>
-                          </select>
-
-
-                          </form>
-                        </div>
-        </div>
-        <!-- Completed Button -->
-        <td><button type="button" class="btn btn-outline-success">Completed</button>
-        </td>
-        </tr>
-
-        <% }%>
-          </tbody>
-          </table>
-
-
-
-      </div>
-    </div>
-    </div>
+  <main id="main-content">
 
 
 
   </main>
 
   <footer>
-
   </footer>
 
 </body>
-
 
 </html>
