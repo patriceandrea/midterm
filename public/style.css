@@ -49,38 +49,47 @@ main > h2 {
 }
 
 .menu-category {
-  width: 88%;
-  margin: auto;
   display: flex;
+  flex-direction: column;
+  margin: 1.5rem 3.5rem 0rem 3.5rem;
+  padding-bottom: 1.8rem;
+  border: 1px solid gray;
+  border-radius: 1rem;
+}
+.menu-category h2 {
+  margin: 1.2rem 2rem 0.4rem 2rem;
+}
+.menu-category .category-cards {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  border: 2px solid black;
 }
-.menu-category .card {
+.menu-category .category-cards .card {
   width: 10rem;
-  margin-left: 1.6rem;
+  margin: 0.8rem 0.8rem 0rem 0.8rem;
 }
-.menu-category .card .card-body {
+.menu-category .category-cards .card .card-body {
   padding: 0.5rem;
 }
-.menu-category .card .card-body .card-title {
+.menu-category .category-cards .card .card-body .card-title {
   font-size: 0.89rem;
   margin: 0rem 0rem 0rem 0rem;
 }
-.menu-category .card .card-body .card-text {
+.menu-category .category-cards .card .card-body .card-text {
   font-size: 0.7rem;
   margin: 0rem 0rem;
 }
-.menu-category .card .card-body .icon-row {
+.menu-category .category-cards .card .card-body .icon-row {
   display: flex;
   justify-content: space-evenly;
   min-height: 2.2rem;
   font-size: 1.25rem;
   padding: 0.5rem 0rem;
 }
-.menu-category .card .card-body .add-to-cart-btn-box {
+.menu-category .category-cards .card .card-body .add-to-cart-btn-box {
   text-align: center;
 }
-.menu-category .card .card-body .btn {
+.menu-category .category-cards .card .card-body .btn {
   font-size: 0.75rem;
 }
 
