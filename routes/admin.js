@@ -9,10 +9,7 @@ module.exports = (db) => {
 
   })
 
-  router.post("/waitTime", (req, res) => {
-    console.log("Request",req.body);
-
-  });
+ 
 
 
   router.post("/complete", (req, res) => {
@@ -25,6 +22,9 @@ module.exports = (db) => {
     })
       .catch(e => res.send(e));
   });
+
+
+
 
   return router;
 };

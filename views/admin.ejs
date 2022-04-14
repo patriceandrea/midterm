@@ -162,6 +162,8 @@
       <!-- Completed Button -->
       <td><form name="complete-form" method="POST" action="/admin/complete" id="complete<%orderItems[i].order_id%>">
         <input name="completeOrderId" type="hidden" value="<%=orderItems[i].order_id%>">
+        <input name="customer" type="hidden" value="<%=orderItems[i].name%>">
+        <input name="phone" type="hidden" value="<%=orderItems[i].phone%>">
         <button type="submit" class="completed btn btn-outline-success">Completed</button></form>
       </td>
       </tr>
