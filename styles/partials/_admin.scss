@@ -9,28 +9,22 @@ nav {
   color: white;
 }
 
-.dropdown{
-  margin-top: 2em;
-}
-
-#main-content {
-  margin-top: 10em;
-}
-
-caption {
-  font-size: 1.2em ;
-  font-weight: bold;
-  color: black;
-}
-
 #snaq:hover{
   color: black;
 }
 
-.table {
-  width: 95%;
-  margin-left: auto;
+.order {
+  border: 1px solid gray;
+  align-items: center;
+
+  .order-id,
+  .order-userID,
+  .order-createdAt,
+  .order-total {
+    text-align: center;
+  }
+
+  .order-comments {
+    font-size: 16px;
+  }
 }
-
-
-
