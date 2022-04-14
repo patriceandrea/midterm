@@ -39,14 +39,13 @@ app.use(express.json());
 const usersRoutes = require("./routes/users");
 const ordersRoutes = require("./routes/order");
 const adminRoutes = require("./routes/admin");
-const adminDataRoutes = require("./routes/adminDataRoutes");
-const menuRoutes = require("./routes/menu");
+// const adminDataRoutes = require("./routes/adminData");
+// const menuRoutes = require("./routes/menu");
 
-app.use("/api/users", usersRoutes(database));
+app.use("/users", usersRoutes(database));
 app.use("/order", ordersRoutes(database));
 app.use("/admin", adminRoutes(database));
-app.use("/menu", menuRoutes(database));
-
+// app.use("/menu", menuRoutes(database));
 
 // Note: mount other resources here, using the same pattern above
 

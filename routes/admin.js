@@ -29,9 +29,9 @@ module.exports = (db) => {
   // }
 
   router.post('/login', (req, res) => {
-    // let email = req.body.email;
-    // let password = req.body.password;
-    // console.log( "email", email, "Password", password);
+    let email = req.body.email;
+    let password = req.body.password;
+    console.log( "email", email, "Password", password);
     // login(email, password)
     //   .then(user => {
     //     if (!user) {
