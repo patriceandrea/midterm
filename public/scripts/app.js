@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
   const loadMenu = () => {
     $.ajax('/menu', { method: 'GET' })
@@ -37,4 +37,14 @@ $(document).ready(function() {
       .map(menuItemData => createMenuElement(menuItemData))
       .forEach(menuElement => $('#menu').prepend(menuElement));
   };
+
+
+
+
 });
+//   const createMenuCategoryElement = (categoryItem) => {
+//     const $categoryItem = $(`
+// <p>${Object.keys(categoryItem)}</p>
+//       `);
+//     return $categoryItem;
+//   };
