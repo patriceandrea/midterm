@@ -5,10 +5,7 @@ module.exports = (db) => {
 
   router.get("/", (req, res) => {
     db.getAllMenuItems()
-      .then((menuItems) => {
-        // or maybe res.json() ?
-        res.send(menuItems);
-      })
+      .then(menuItems => res.json(menuItems))
       .catch(e => {
         console.error(e);
         res.send(e);
