@@ -1,8 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
+require("dotenv").config();
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken= process.env.TWILIO_AUTH_TOKEN;
+const twilio = require('twilio'); // npm i twilio
+const client = new twilio(accountSid, authToken);
+
 const sendCustomerMessage = (name, phone) => {
-  console.log("sending message...");
+  console.log("sending message...", "name", name, "phone", phone);
   client.messages
     .create({
       body: `Hi ${name},Your order is ready! Thank you for ordering with us.`,
@@ -28,11 +34,16 @@ module.exports = (db) => {
 
   router.post("/complete", (req, res) => {
     console.log("Request",req.body);
-
-    db.setOrderCompleteWithOrderId(req.body.completeOrderId).then(() => {
+    const  {customer, phone, completeOrderId} = req.body
+    db.setOrderCompleteWithOrderId(completeOrderId).then(() => {
       db.getAllPendingOrders()
-    .then((orderItems) =>  res.render("admin", {orderItems: orderItems}))
-      console.log("Complete")
+    .then((orderItems) => {
+
+      sendCustomerMessage(customer, phone);
+      return res.render("admin", {orderItems: orderItems})
+
+
+    })
     })
       .catch(e => res.send(e));
   });
