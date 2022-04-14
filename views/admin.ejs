@@ -12,15 +12,15 @@
 <body>
 
   <nav style="background-color: #35A5CE;">
-    <h1 id="snaq"> Snaq </h1>
+    <h1 id="snaq" style="color:white"> Snaq </h1>
 
-    <div class="dropdown pb-4">
+    <div id="admin-header" class="dropdown pb-4">
       <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1"
         data-bs-toggle="dropdown" aria-expanded="false">
         <img
           src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hlZnxlbnwwfHwwfHw%3D&w=1000&q=80"
           width="50" height="50" class="rounded-circle">
-        <span class="d-none d-sm-inline mx-1">Robert</span>
+        <span class="d-none d-sm-inline mx-1" style="color:white">Robert</span>
       </a>
       <ul class="dropdown-menu dropdown-menu-light text-small shadow">
 
@@ -107,7 +107,7 @@
       <!-- Table -->
       <div class="col py-3">
         <table class="table table-centered  mb-0 table-hover">
-          <caption align="top">Current Orders :  <%= orderItems.length %></caption>
+          <caption align="top" id="current-orders">Current Orders :  <%= orderItems.length %></caption>
           <thead class="table-light">
 
             <tr>

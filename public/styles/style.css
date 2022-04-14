@@ -145,14 +145,14 @@ nav {
   font-size: 16px;
 }
 
-#profile-header {
-  margin-top: 2em;
+#current-orders {
+  font-family: "Lemon", sans-serif;
+  color: black;
+  size: em;
 }
 
-#currentOrders {
-  font-family: "Lemon", sans-serif;
-  font-size: larger;
-  color: black;
+#admin-header {
+  margin-top: 2em;
 }
 
 .flex-row {
