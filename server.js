@@ -29,6 +29,7 @@ app.use(
     destination: __dirname + "/public",
     debug: true,
     isSass: false, // false => scss, true => sass
+    outputStyle: 'expanded'
   })
 );
 
