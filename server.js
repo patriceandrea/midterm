@@ -46,7 +46,7 @@ app.use("/api/users", usersRoutes(database));
 app.use("/order", ordersRoutes(database));
 app.use("/admin", adminRoutes(database));
 app.use("/menu", menuRoutes(database));
-app.use("/admind", adminRoutes(database));
+
 
 // Note: mount other resources here, using the same pattern above
 
