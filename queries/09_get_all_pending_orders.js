@@ -14,7 +14,7 @@ const getPendingOrders = () => {
 
   const query = {
     name: 'get_all_pending_orders',
-    text: `SELECT  users.name, orders.*, order_items.* as items
+    text: `SELECT  users.*, orders.*, order_items.* as items
             FROM orders
             JOIN users ON user_id = users.id
             JOIN order_items ON order_id = orders.id
