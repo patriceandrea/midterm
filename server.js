@@ -48,21 +48,16 @@ app.use("/menu", menuRoutes(database));
 
 // Note: mount other resources here, using the same pattern above
 
-// Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
+//TESTING ROUTE
 app.get("/dev", (req, res) => {
   res.render("dev");
 });
 
+// Home page
 app.get("/", (req, res) => {
-  // getAllMenuItems()
-  //   .then((menuItems) => {
-  //     // BUG FIXING: THIS IS NOT THE ISSUE, menuItems ARE RETURNED AS EXPECTED
-  //     res.render("index", { menuItems: menuItems });
-  //   })
-  //   .catch(error => res.send(error));
   res.render("index");
 });
 

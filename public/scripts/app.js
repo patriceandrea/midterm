@@ -12,7 +12,6 @@ $(document).ready(function () {
     // id,name,description,price,modifiers,photo,category,type,active
 
     // TODO -- consider if there is a more appropriate solution to the URL issue than slicing it
-    //
 
     const $menuItem = $(`
       <img src="${menuItem.photo.slice(4)}" class="card-img-top" alt="Food pic" style="width:250px">
@@ -26,9 +25,7 @@ $(document).ready(function () {
         <div class="d-grid gap-2">
           <button type="button" class="btn btn-outline-dark btn-sm">Add to Cart</button>
         </div>
-      </div>
-        `);
-
+      </div>`);
     return $menuItem;
   };
 
@@ -37,14 +34,4 @@ $(document).ready(function () {
       .map(menuItemData => createMenuElement(menuItemData))
       .forEach(menuElement => $('#menu').prepend(menuElement));
   };
-
-
-
-
 });
-//   const createMenuCategoryElement = (categoryItem) => {
-//     const $categoryItem = $(`
-// <p>${Object.keys(categoryItem)}</p>
-//       `);
-//     return $categoryItem;
-//   };
