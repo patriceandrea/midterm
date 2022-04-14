@@ -38,12 +38,13 @@ $(document).ready(() => {
 
     console.log('$menuItems');
     $menuItems.forEach(x => {
+      // TODO GONZO
       console.log('0:', x[0]);
       console.log('1:', x[2]);
     });
 
     // $menuItems = $menuItems.map((x) => x.html());
-
+    // TODO GONZO
     const $menuCategory = $(`
     <div class="menu-category">
     <h2>${category}</h2>
