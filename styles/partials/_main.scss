@@ -1,3 +1,5 @@
+// TODO - rename this file to _index.scss to line up with the .ejs file names
+
 header {
   img {
     filter: brightness(0.45);
@@ -30,6 +32,7 @@ main > h2 {
   margin: auto;
   display: flex;
   justify-content: center;
+  border: 2px solid black;
 
   .card {
     width: 10rem;

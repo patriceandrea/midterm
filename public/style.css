@@ -53,6 +53,7 @@ main > h2 {
   margin: auto;
   display: flex;
   justify-content: center;
+  border: 2px solid black;
 }
 .menu-category .card {
   width: 10rem;
