@@ -14,11 +14,11 @@ const getPendingOrders = () => {
 
   const query = {
     name: 'get_all_pending_orders',
-    text: `SELECT  users.*, orders.*, order_items.* as items
-            FROM orders
-            JOIN users ON user_id = users.id
-            JOIN order_items ON order_id = orders.id
-            WHERE ready_at IS NULL; `,
+    text: `SELECT orders.* , users.name, order_items.item as items
+    FROM orders
+    JOIN users ON users.id = user_id
+    JOIN order_items ON order_id = orders.id
+    WHERE ready_at IS NULL; `,
   };
 
   return pool

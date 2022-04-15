@@ -52,13 +52,16 @@ main > h2 {
         padding: 0.5rem;
 
         .card-title {
-          font-size: 0.89rem;
-          margin: 0rem 0rem 0rem 0rem;
+          height: 2.1rem;
+          h5 {
+            font-size: 0.89rem;
+            margin: 0rem 0rem 0rem 0rem;
+          }
         }
 
         .card-text {
           font-size: 0.7rem;
-          margin: 0rem 0rem;
+          height: 4.2rem;
         }
 
         .icon-row {

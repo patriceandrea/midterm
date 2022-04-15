@@ -9,6 +9,8 @@ nav {
   color: white;
 }
 
+
+
 #snaq:hover{
   color: black;
 }
@@ -27,4 +29,14 @@ nav {
   .order-comments {
     font-size: 16px;
   }
+}
+
+#current-orders {
+  font-family: 'Lemon', sans-serif;
+  color: black;
+  size: em;
+}
+
+#admin-header{
+  margin-top: 2em;
 }

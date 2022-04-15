@@ -41,11 +41,13 @@ const usersRoutes = require("./routes/users");
 const ordersRoutes = require("./routes/order");
 const adminRoutes = require("./routes/admin");
 const menuRoutes = require("./routes/menu");
+const cartRoutes = require('./routes/cart');
 
 app.use("/api/users", usersRoutes(database));
 app.use("/order", ordersRoutes(database));
 app.use("/admin", adminRoutes(database));
 app.use("/menu", menuRoutes(database));
+app.use("/cart", cartRoutes(database));
 
 //TESTING ROUTE
 app.get("/dev", (req, res) => {
@@ -70,3 +72,4 @@ app.get("/cart", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
+

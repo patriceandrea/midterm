@@ -1,54 +1,74 @@
 const express = require('express');
 const router = express.Router();
+const { sendCustomerMessage } = require("../twilio.js");
+// const bcrypt = require("bcryptjs");
 
-require("dotenv").config();
-const accountSid = process.env.TWILIO_ACCOUNT_SID;
-const authToken= process.env.TWILIO_AUTH_TOKEN;
-const twilio = require('twilio'); // npm i twilio
-const client = new twilio(accountSid, authToken);
-
-const sendCustomerMessage = (name, phone) => {
-  console.log("sending message...", "name", name, "phone", phone);
-  client.messages
-    .create({
-      body: `Hi ${name},Your order is ready! Thank you for ordering with us.`,
-      from: process.env.TWILIO_NUMBER,
-      to: phone
-    })
-    .then(message => console.log("message id: " + message.sid))
-    .catch(err => {
-      console.log(err);
-    });
-};
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
     db.getAllPendingOrders()
-    .then((orderItems) =>  res.render("admin", {orderItems: orderItems}))
-    .catch((e) => res.send(e));
+      .then((orderItems) => res.render("admin", { orderItems: orderItems }))
+      .catch((e) => res.send(e));
 
-  })
+  });
 
+  router.get("/login", (req, res) => {
+    res.render("admin_login");
+  });
 
+  // const login =  function(email, password) {
+  //   return getUserByEmail(email)
+  //   .then(user => {
+  //     if(!user.admin) {
+  //       return null;
+  //     }
+  //     if (bcrypt.compareSync(password, user.password)) {
+  //       return user;
+  //     }
+  //     return null;
+  //   });
+  // }
 
-
-  router.post("/complete", (req, res) => {
-    console.log("Request",req.body);
-    const  {customer, phone, completeOrderId} = req.body
-    db.setOrderCompleteWithOrderId(completeOrderId).then(() => {
-      db.getAllPendingOrders()
-    .then((orderItems) => {
-
-      sendCustomerMessage(customer, phone);
-      return res.render("admin", {orderItems: orderItems})
-
-
-    })
-    })
-      .catch(e => res.send(e));
+  router.post('/login', (req, res) => {
+    // let email = req.body.email;
+    // let password = req.body.password;
+    // login(email, password)
+    //   .then(user => {
+    //     if (!user) {
+    //       res.send({error: "error"});
+    //       return;
+    //     }
+    //     req.session.userId = user.id;
+        res.redirect("/admin");
+      // })
+      // .catch(e => res.send(e));
   });
 
 
+  //   //Logout
+
+  //   router.post('/logout', (req, res) => {
+  //     req.session.userID = null;
+  //     res.send("You are logged out");
+  //   });
+
+ 
+
+  router.post("/complete", (req, res) => {
+
+    const { customer, phone, completeOrderId } = req.body;
+    db.setOrderCompleteWithOrderId(completeOrderId).then(() => {
+      db.getAllPendingOrders()
+        .then((orderItems) => {
+
+          sendCustomerMessage(customer, phone);
+          return res.render("admin", { orderItems: orderItems });
+
+
+        });
+    })
+      .catch(e => res.send(e));
+  });
 
 
   return router;

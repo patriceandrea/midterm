@@ -1,0 +1,16 @@
+body{
+  font-family: 'Overpass', sans-serif;
+  background-color: white;
+}
+
+nav {
+  background-color: $red;
+  position: sticky;
+  height: 5.5rem;
+  width: 100%;
+  padding: 0 4.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  z-index: 99;
+}
