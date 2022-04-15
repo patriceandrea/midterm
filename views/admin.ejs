@@ -3,26 +3,24 @@
 
 <head>
   <%- include('partials/_head'); %>
-  <title>Burgïr | SNAQ Admin</title>
+    <title>Burgïr | SNAQ Admin</title>
 
-  <link rel="stylesheet" href="_admin_login.css" type="text/css" />
-
-  <!-- App JS -->
-  <script type="text/javascript" src="/scripts/app.js"></script>
+    <!-- App JS -->
+    <script type="text/javascript" src="/scripts/admin.js"></script>
 </head>
-
-
-
 
 <body>
 
   <nav style="background-color: #35A5CE;">
-    <h1 id="snaq"> Snaq </h1>
+    <h1 id="snaq" style="color:white"> Snaq </h1>
 
-    <div class="dropdown pb-4">
-      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-          <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hlZnxlbnwwfHwwfHw%3D&w=1000&q=80"  width="50" height="50" class="rounded-circle">
-          <span class="d-none d-sm-inline mx-1">Robert</span>
+    <div id="admin-header" class="dropdown pb-4">
+      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        <img
+          src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hlZnxlbnwwfHwwfHw%3D&w=1000&q=80"
+          width="50" height="50" class="rounded-circle">
+        <span class="d-none d-sm-inline mx-1" style="color:white">Robert</span>
       </a>
       <ul class="dropdown-menu dropdown-menu-light text-small shadow">
 
@@ -33,9 +31,8 @@
           </li>
           <li><a class="dropdown-item" href="/admin/login">Sign out</a></li>
       </ul>
-  </div>
+    </div>
   </nav>
-
 
   <main id="#main-content">
 
@@ -43,207 +40,150 @@
 
     <div class="container-fluid">
       <div class="row flex-nowrap">
-          <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-light">
-              <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-light">
+          <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
 
+            <li>
+              <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
+              <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                <li class="w-100">
+                  <a href="/admin" class="nav-link px-0"> <span class="d-none d-sm-inline">Current Orders</span></a>
+                </li>
+                <li>
+                  <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Closed Orders</span></a>
+                </li>
+              </ul>
+            </li>
+
+            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+              <li class="nav-item">
+
+
+                <a href="/" class="nav-link align-middle px-0">
+                  <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Menu Page</span>
+                </a>
+              </li>
               <li>
-                <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
-                    <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
-                <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
-                    <li class="w-100">
-                        <a href="/admin" class="nav-link px-0"> <span class="d-none d-sm-inline">Current Orders</span></a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Closed Orders</span></a>
-                    </li>
+                <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                  <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
+                <ul class="collapse  nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                  <li>
+                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Analytics</span> </a>
+                  </li>
                 </ul>
               </li>
 
-              <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                <li class="nav-item">
 
+              <li>
+                <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                  <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span> </a>
+                <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+                  <li class="w-100">
+                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Starters</span> </a>
+                  </li>
+                  <li>
+                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Mains</span> </a>
+                  </li>
+                  <li>
+                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Desserts</span></a>
+                  </li>
+                  <li>
+                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Beverages</span></a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#" class="nav-link px-0 align-middle">
+                  <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
+              </li>
+            </ul>
+            <hr>
 
-                    <a href="/" class="nav-link align-middle px-0">
-                        <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Menu Page</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                        <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
-                    <ul class="collapse  nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
-                        <li>
-                            <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Analytics</span>  </a>
-                        </li>
-                    </ul>
-                </li>
-
-
-                      <li>
-                          <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                              <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span> </a>
-                              <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
-                              <li class="w-100">
-                                  <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Starters</span> </a>
-                              </li>
-                              <li>
-                                  <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Mains</span> </a>
-                              </li>
-                              <li>
-                                  <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Desserts</span></a>
-                              </li>
-                              <li>
-                                  <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Beverages</span></a>
-                              </li>
-                          </ul>
-                      </li>
-                      <li>
-                          <a href="#" class="nav-link px-0 align-middle">
-                              <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
-                      </li>
-                  </ul>
-                  <hr>
-
-              </div>
           </div>
+        </div>
 
-          <!-- Table -->
-          <div class="col py-3">
-            <table class="table table-centered  mb-0 table-hover">
-              <caption align="top">Current Orders : 4</caption>
-              <thead class="table-light">
 
-                <tr>
-                  <th>Name</th>
-                  <th>Order #</th>
-                  <th>Order</th>
-                  <th>Requests</th>
-                  <th>Created At</th>
-                  <th> Wait Time</th>
-                  <th>Mark Completed</th>
-                </tr>
-              </thead>
-              <tbody >
-                <tr>
-                  <td>Julia</td>
-                  <td>1</td>
-                  <td>1.Burger <br> 2.Pizza</td>
-                  <td>Sauce on the side please :)</td>
-                  <td>3:45 pm</td>
+        <!-- Table -->
+        <div class="col py-3">
+          <table class="table table-centered  mb-0 table-hover">
+            <caption align="top" id="current-orders">Current Orders : <%= orderItems.length %>
+            </caption>
+            <thead class="table-light">
 
-                    <!-- Wait List Drop Down-->
-                    <td>
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Wait Time
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">15 mins</a></li>
-                        <li><a class="dropdown-item" href="#">20 mins</a></li>
-                        <li><a class="dropdown-item" href="#">30 mins</a></li>
-                        <li><a class="dropdown-item" href="#">45 mins</a></li>
-                        <li><a class="dropdown-item" href="#">60 mins</a></li>
-                      </ul>
-                    </div>
+              <tr>
+                <th>Name</th>
+                <th>Order #</th>
+                <th>Order</th>
+                <th>Requests</th>
+                <th>Created At</th>
+                <th> Wait Time</th>
+                <th>Mark Completed</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr class="pendingOrders" id="orders">
+                <% for (let i=0; i < orderItems.length; i++){ %>
+                  <td>
+                    <%= orderItems[i].name %>
                   </td>
-                  <!-- Completed Button -->
-                  <td><button type="button" class="btn btn-outline-success">Completed</button></td>
-                </tr>
-                <tr>
-                  <td>Gonzo</td>
-                  <td>2</td>
-                  <td>1.Burger <br> 2.Pizza</td>
-                  <td>No pickles on the burger</td>
-                  <td>6:45 pm</td>
+                  <td>
+                    <%= orderItems[i].order_id %>
+                  </td>
+                  <td>
+                    <%= orderItems[i].item %>
+                  </td>
+                  <td>
+                    <%= orderItems[i].comments %>
+                  </td>
+                  <td>
+                    <%= orderItems[i].created_at %>
+                  </td>
+
                   <td>
                     <!-- Wait List Drop Down-->
                     <div class="btn-group">
-                      <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Wait Time
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">15 mins</a></li>
-                        <li><a class="dropdown-item" href="#">20 mins</a></li>
-                        <li><a class="dropdown-item" href="#">30 mins</a></li>
-                        <li><a class="dropdown-item" href="#">45 mins</a></li>
-                        <li><a class="dropdown-item" href="#">60 mins</a></li>
-                      </ul>
-                    </div>
-                  </td>
-                  <!-- Completed Button -->
-                  <td><button type="button" class="btn btn-outline-success">Completed</button></td>
-                </tr>
-                <tr>
-                  <td>Pat</td>
-                  <td>3</td>
-                  <td>1.Burger <br> 2.Pizza</td>
-                  <td>No mayo</td>
-                  <td>7:45 pm</td>
-                  <td>
-                    <!-- Wait List Drop Down-->
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Wait Time
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">15 mins</a></li>
-                        <li><a class="dropdown-item" href="#">20 mins</a></li>
-                        <li><a class="dropdown-item" href="#">30 mins</a></li>
-                        <li><a class="dropdown-item" href="#">45 mins</a></li>
-                        <li><a class="dropdown-item" href="#">60 mins</a></li>
-                      </ul>
-                    </div>
-                  </td>
-                  <!-- Completed Button -->
-                  <td><button type="button" class="btn btn-outline-success">Completed</button></td>
-                </tr>
-                <tr>
-                  <td>Robert</td>
-                  <td>7</td>
-                  <td>1.Burger <br> 2.Pizza</td>
-                  <td>Well Done Pizza</td>
-                  <td>8:45 pm</td>
-                  <!-- Switch-->
-                  <td>
-                    <!-- Wait List Drop Down-->
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Wait Time
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">15 mins</a></li>
-                        <li><a class="dropdown-item" href="#">20 mins</a></li>
-                        <li><a class="dropdown-item" href="#">30 mins</a></li>
-                        <li><a class="dropdown-item" href="#">45 mins</a></li>
-                        <li><a class="dropdown-item" href="#">60 mins</a></li>
-                      </ul>
-                    </div>
-                    </div>
-                    <!-- Completed Button -->
-                  <td><button type="button" class="btn btn-outline-success">Completed</button></td>
-                  </td>
 
-                </tr>
-              </tbody>
-            </table>
-          </div>
-      </div>
-  </div>
+                      <form method="POST" action="/admin/waitTime" class="waitList form-inline"></form>
+                      <input name="waitTime" type="hidden" value="<%=orderItems[i].phone%>">
+
+                      <select id="selectWaitTime<%=orderItems[i].name%>" class=" form-select form-select-lg mb-3"
+                        aria-label=".form-select-lg example">
+                        <option type="submit" selected value="15">15 mins</option>
+                        <option type="submit" value="20">20 mins</option>
+                        <option type="submit" value="30">30 mins</option>
+                        <option type="submit" value="45">45 mins</option>
+                        <option type="submit" value="60">60 mins</option>
+                      </select>
+
+                    </div>
+        </div>
 
 
+        <!-- Completed Button -->
+        <td>
+          <form name="complete-form" method="POST" action="/admin/complete" id="complete<%orderItems[i].order_id%>">
+            <input name="completeOrderId" type="hidden" value="<%=orderItems[i].order_id%>">
+            <input name="customer" type="hidden" value="<%=orderItems[i].name%>">
+            <input name="phone" type="hidden" value="<%=orderItems[i].phone%>">
+            <button type="submit" class="completed btn btn-outline-success">Completed</button>
+          </form>
+        </td>
+        </tr>
+
+        <% }%>
+          </tbody>
+          </table>
 
 
 
   </main>
 
   <footer>
-
+    <%- include('partials/_footer'); %>
   </footer>
 
 </body>
-
 
 </html>

@@ -1,19 +1,20 @@
 const express = require('express');
 const router = express.Router();
+const { sendCustomerMessage } = require("../twilio.js");
 // const bcrypt = require("bcryptjs");
 
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    res.render("admin");
-  });
+    db.getAllPendingOrders()
+      .then((orderItems) => res.render("admin", { orderItems: orderItems }))
+      .catch((e) => res.send(e));
 
+  });
 
   router.get("/login", (req, res) => {
     res.render("admin_login");
   });
-
-
 
   // const login =  function(email, password) {
   //   return getUserByEmail(email)
@@ -51,6 +52,24 @@ module.exports = (db) => {
   //     res.send("You are logged out");
   //   });
 
-    return router;
-  };
+ 
 
+  router.post("/complete", (req, res) => {
+
+    const { customer, phone, completeOrderId } = req.body;
+    db.setOrderCompleteWithOrderId(completeOrderId).then(() => {
+      db.getAllPendingOrders()
+        .then((orderItems) => {
+
+          sendCustomerMessage(customer, phone);
+          return res.render("admin", { orderItems: orderItems });
+
+
+        });
+    })
+      .catch(e => res.send(e));
+  });
+
+
+  return router;
+};

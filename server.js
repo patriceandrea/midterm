@@ -26,9 +26,10 @@ app.use(
   "/styles",
   sassMiddleware({
     source: __dirname + "/styles",
-    destination: __dirname + "/public",
+    destination: __dirname + "/public/styles",
     debug: true,
     isSass: false, // false => scss, true => sass
+    outputStyle: 'expanded'
   })
 );
 
@@ -39,38 +40,29 @@ app.use(express.json());
 const usersRoutes = require("./routes/users");
 const ordersRoutes = require("./routes/order");
 const adminRoutes = require("./routes/admin");
-// const adminDataRoutes = require("./routes/adminData");
-// const menuRoutes = require("./routes/menu");
+const menuRoutes = require("./routes/menu");
 
-app.use("/users", usersRoutes(database));
+app.use("/api/users", usersRoutes(database));
 app.use("/order", ordersRoutes(database));
 app.use("/admin", adminRoutes(database));
-// app.use("/menu", menuRoutes(database));
+app.use("/menu", menuRoutes(database));
 
-// Note: mount other resources here, using the same pattern above
-
-// Home page
-// Warning: avoid creating more routes in this file!
-// Separate them into separate routes files (see above).
-
+//TESTING ROUTE
 app.get("/dev", (req, res) => {
   res.render("dev");
 });
 
+// Home page
 app.get("/", (req, res) => {
-  // getAllMenuItems()
-  //   .then((menuItems) => {
-  //     // BUG FIXING: THIS IS NOT THE ISSUE, menuItems ARE RETURNED AS EXPECTED
-  //     res.render("index", { menuItems: menuItems });
-  //   })
-  //   .catch(error => res.send(error));
   res.render("index");
 });
 
+// TODO -- move to a routing file
 app.get("/menu", (req, res) => {
   res.render("menu");
 });
 
+// TODO -- move to a routing file
 app.get("/cart", (req, res) => {
   res.render("cart");
 });

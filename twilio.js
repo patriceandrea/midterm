@@ -1,6 +1,6 @@
 require("dotenv").config();
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
-const authToken= process.env.TWILIO_AUTH_TOKEN;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
 const twilio = require('twilio'); // npm i twilio
 const client = new twilio(accountSid, authToken);
 
@@ -8,7 +8,7 @@ const sendRestaurantMessage = function() {
   console.log("sending message...");
   client.messages
     .create({
-      body: "Alert: A customer has placed an order! Please head over to the admin page to accept and provide an estimated wait time.",
+      body: "Alert: A customer has placed an order! Please head over to the admin page to accept the order",
       from: process.env.TWILIO_NUMBER,
       to: "+16478956858"
     })
@@ -18,11 +18,11 @@ const sendRestaurantMessage = function() {
     });
 };
 
-const sendCustomerMessage = (name, phone, waitTime) => {
+const sendCustomerMessage = (name, phone) => {
   console.log("sending message...");
   client.messages
     .create({
-      body: `Hi ${name},Your order has been accepted! Estimated wait time: ${waitTime} minutes.`,
+      body: `Hi ${name},Your order has been accepted! Thank you for ordering with us.`,
       from: process.env.TWILIO_NUMBER,
       to: phone
     })
@@ -32,7 +32,5 @@ const sendCustomerMessage = (name, phone, waitTime) => {
     });
 };
 
-sendRestaurantMessage();
-sendCustomerMessage('Julia', '+14164595579', '15');
 
 module.exports = { sendRestaurantMessage, sendCustomerMessage };
