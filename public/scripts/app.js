@@ -23,12 +23,8 @@ $().ready(() => {
         </div>
 
         <div class="d-grid gap-2">
-        <button id='liveToastBtn' type="button" class="btn btn-outline-dark btn-sm" data-toggle="tooltip" data-placement="top"
-        title="I want to eat this!">Add to Cart</button>
-      </div>
-
-
-
+          <button type="button" id="${menuItem.id}" class="add-to-cart btn btn-outline-dark btn-sm">Add to Cart</button>
+        </div>
       </div>
     </div>`);
     return $menuItem;
