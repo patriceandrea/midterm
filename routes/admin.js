@@ -9,23 +9,23 @@ module.exports = (db) => {
       .then((orderItems) => res.render("admin", { orderItems: orderItems }))
       .catch((e) => res.send(e));
 
-  })
+  });
 
 
 
 
   router.post("/complete", (req, res) => {
-  
-    const { customer, phone, completeOrderId } = req.body
+
+    const { customer, phone, completeOrderId } = req.body;
     db.setOrderCompleteWithOrderId(completeOrderId).then(() => {
       db.getAllPendingOrders()
         .then((orderItems) => {
 
           sendCustomerMessage(customer, phone);
-          return res.render("admin", { orderItems: orderItems })
+          return res.render("admin", { orderItems: orderItems });
 
 
-        })
+        });
     })
       .catch(e => res.send(e));
   });
