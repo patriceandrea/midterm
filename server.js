@@ -1,8 +1,6 @@
 // load .env data into process.env
 require("dotenv").config();
-const { getAllMenuItems } = require("./lib/db");
 
-// Web server config
 const PORT = process.env.PORT || 8080;
 const sassMiddleware = require("./lib/sass-middleware");
 const express = require("express");
@@ -10,19 +8,13 @@ const app = express();
 const morgan = require("morgan");
 const cookieSession = require("cookie-session");
 
-// PG database client/connection setup
-const { Pool } = require("pg");
-const dbHelpers = require("./lib/db.js");
-
-const db = new Pool(dbHelpers.dbParams);
-db.connect();
+const database = require("./lib/db.js");
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
 //         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
 app.use(morgan("dev"));
 
-// Set EJS as the HTML templating engine
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieSession({
@@ -34,9 +26,10 @@ app.use(
   "/styles",
   sassMiddleware({
     source: __dirname + "/styles",
-    destination: __dirname + "/public",
+    destination: __dirname + "/public/styles",
     debug: true,
     isSass: false, // false => scss, true => sass
+    outputStyle: 'expanded'
   })
 );
 
@@ -44,37 +37,32 @@ app.use(express.static("public"));
 app.use(express.static("img"));
 app.use(express.json());
 
-// Separated Routes for each Resource
-// Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
 const ordersRoutes = require("./routes/order");
 const adminRoutes = require("./routes/admin");
-const cartRoutes = require("./routes/cart");
+const menuRoutes = require("./routes/menu");
 
-// Mount all resource routes
-// Note: Feel free to replace the example routes below with your own
-app.use("/users", usersRoutes(db));
-app.use("/order", ordersRoutes(db));
-app.use("/admin", adminRoutes(db));
-app.use("/cart", cartRoutes(db));
-// Note: mount other resources here, using the same pattern above
+app.use("/api/users", usersRoutes(database));
+app.use("/order", ordersRoutes(database));
+app.use("/admin", adminRoutes(database));
+app.use("/menu", menuRoutes(database));
 
-// Home page
-// Warning: avoid creating more routes in this file!
-// Separate them into separate routes files (see above).
-
+//TESTING ROUTE
 app.get("/dev", (req, res) => {
   res.render("dev");
 });
 
+// Home page
 app.get("/", (req, res) => {
-  getAllMenuItems()
-    .then((menuItems) => {
-      res.render("index", { menuItems: menuItems });
-    })
-    .catch(error => res.send(error));
+  res.render("index");
 });
 
+// TODO -- move to a routing file
+app.get("/menu", (req, res) => {
+  res.render("menu");
+});
+
+// TODO -- move to a routing file
 app.get("/cart", (req, res) => {
   res.render("cart");
 });
