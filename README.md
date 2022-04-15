@@ -1,21 +1,22 @@
 # Snaq A Food Pick-Up Ordering Website
 
-Snaq is a food ordering app that let's customers skip the line. Customers are able to select one or more dishes and place an order for pickup. Using a Twilio API, customers recieve a notification when their order is ready . The restaurant gets an alert that someone ordered. Snaq serves as an intermediary.
+Snaq is a food pick-up web app that embeds into restaurant's websites and provides a back-end for order management.
+
+Customers can select one or more dishes and place an order for pickup. Using the Twilio API, customers recieve an SMS notification with their estimated wait time and another when their order is ready. The restaurant also receives an SMS alert when an order is received. Snaq serves as an intermediary.
 Snaq also has an admin portal that allows for restaurant owners to provide wait times and mark orders as complete.
 
 This website was built by Patrice Pavico, Gonzo Nieto, and Julia Tran using HTML, CSS, JS, jQuery, Ajax, EJS, and PostgreSQL.
-
 
 ## Setup
 
 Interested in trying Snaq?
 
 
-- Have [`npm`](https://www.npmjs.com/) installed
-- clone this repo to your machine
-- install dependencies with `npm install` command
-- run the server with `npm start`
-- once the server is running, you can visit Snaq at `http://localhost:8080/`
+- Install [`npm`](https://www.npmjs.com/)
+- [Clone this repo](https://github.com/git-guides/git-clone) to your machine
+- Install dependencies with `npm install`
+- Run the server with `npm start`
+- Once the server is running, you can visit Snaq at `http://localhost:8080/`
 
 
 ## Dependencies
