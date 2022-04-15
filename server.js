@@ -44,12 +44,14 @@ const ordersRoutes = require("./routes/order");
 const adminRoutes = require("./routes/admin");
 const menuRoutes = require("./routes/menu");
 const cartRoutes = require('./routes/cart');
+const soonRoutes = require('./routes/soon');
 
 app.use("/api/users", usersRoutes(database));
 app.use("/order", ordersRoutes(database));
 app.use("/admin", adminRoutes(database));
 app.use("/menu", menuRoutes(database));
 app.use("/cart", cartRoutes(database));
+app.use("/", soonRoutes());
 
 // Home page
 app.get("/", (req, res) => {
