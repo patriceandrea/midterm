@@ -8,8 +8,8 @@ $(document).ready(() => {
   loadMenu();
 
   const createMenuElement = (menuItem) => {
-    // FOR DEVELOPMENT: LIST OF THE KEYS OF menuItem
-    // id,name,description,price,modifiers,photo,category,type,active
+    // FOR DEVELOPMENT
+    // KEYS OF menuItem: id, name, description, price, modifiers, photo, category, type, active, category_name
 
     // TODO -- consider if there is a more appropriate solution to the URL issue than slicing it
 
@@ -29,9 +29,52 @@ $(document).ready(() => {
     return $menuItem;
   };
 
+  const createCategoryElement = (category, menuItems) => {
+    let $menuItems = [];
+
+    for (let menuItem of menuItems) {
+      $menuItems.push(createMenuElement(menuItem));
+    }
+
+    console.log('$menuItems');
+    $menuItems.forEach(x => {
+      // TODO GONZO
+      console.log('0:', x[0]);
+      console.log('1:', x[2]);
+    });
+
+    // $menuItems = $menuItems.map((x) => x.html());
+    // TODO GONZO
+    const $menuCategory = $(`
+    <div class="menu-category">
+    <h2>${category}</h2>
+
+    <div class="category-cards">
+    </div>
+    `);
+    return $menuCategory;
+  };
+
   const renderMenu = (menuItems) => {
-    menuItems
-      .map(menuItemData => createMenuElement(menuItemData))
-      .forEach(menuElement => $('#menu').prepend(menuElement));
+    // FOR DEVELOPMENT
+    // KEYS OF menuItem: id, name, description, price, modifiers, photo, category, type, active, category_name
+
+    const categories = menuItems.map(x => [ parseInt(x.category), x.category_name ]);
+    const categoryList = [...new Set(categories.map(x => x[1]))];
+
+    const menuItemsByCategory = {};
+
+    for (let category of categoryList) {
+      menuItemsByCategory[category] = menuItems.filter((x) => x.category_name === category);
+    }
+
+    for (let category in menuItemsByCategory) {
+      $('#menu').append(createCategoryElement(category, menuItemsByCategory[category]));
+    }
+
+
+    // menuItems
+    //   .map(menuItemData => createMenuElement(menuItemData))
+    //   .forEach(menuElement => $('#menu').prepend(menuElement));
   };
 });

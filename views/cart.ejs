@@ -3,10 +3,10 @@
 
 <head>
   <%- include('partials/_head'); %>
-  <title>Burgïr | Your Basket</title>
+    <title>Burgïr | Your Basket</title>
 
-  <!-- App JS -->
-  <script type="text/javascript" src="/scripts/app.js"></script>
+    <!-- App JS -->
+    <script type="text/javascript" src="/scripts/app.js"></script>
 </head>
 
 <body>
@@ -143,14 +143,16 @@
           </div>
         </div>
         <div class="text-center">
-          <button type="button" class="btn btn-dark btn">Checkout</button>
+          <form action="/cart/sendNotification" method= "POST">
+          <button type="submit" class="btn btn-dark btn">Checkout</button>
+        </form>
         </div>
       </div>
     </div>
   </main>
 
   <footer>
-
+    <%- include('partials/_footer'); %>
   </footer>
 
 </body>

@@ -1,3 +1,5 @@
+// TODO - rename this file to _index.scss to line up with the .ejs file names
+
 header {
   img {
     filter: brightness(0.45);
@@ -26,43 +28,56 @@ main > h2 {
 }
 
 .menu-category {
-  width: 88%;
-  margin: auto;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  margin: 1.5rem 3.5rem 0rem 3.5rem;
+  padding-bottom: 1.8rem;
+  border: 1px solid gray;
+  border-radius: 1rem;
 
-  .card {
-    width: 10rem;
-    margin-left: 1.6rem;
+  h2 {
+    margin: 1.2rem 2rem 0.4rem 2rem;
+  }
 
-    .card-body {
-      padding: 0.5rem;
+  .category-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
-      .card-title {
-        font-size: 0.89rem;
-        margin: 0rem 0rem 0rem 0rem;
-      }
+    .card {
+      width: 10rem;
+      margin: 0.8rem 0.8rem 0rem 0.8rem;
 
-      .card-text {
-        font-size: 0.7rem;
-        margin: 0rem 0rem;
-      }
+      .card-body {
+        padding: 0.5rem;
 
-      .icon-row {
-        display: flex;
-        justify-content: space-evenly;
-        min-height: 2.2rem;
-        font-size: 1.25rem;
-        padding: 0.5rem 0rem;
-      }
+        .card-title {
+          font-size: 0.89rem;
+          margin: 0rem 0rem 0rem 0rem;
+        }
 
-      .add-to-cart-btn-box {
-        text-align: center;
-      }
+        .card-text {
+          font-size: 0.7rem;
+          margin: 0rem 0rem;
+        }
 
-      .btn {
-        font-size: 0.75rem;
+        .icon-row {
+          display: flex;
+          justify-content: space-evenly;
+          min-height: 2.2rem;
+          font-size: 1.25rem;
+          padding: 0.5rem 0rem;
+        }
+
+        .add-to-cart-btn-box {
+          text-align: center;
+        }
+
+        .btn {
+          font-size: 0.75rem;
+        }
       }
     }
+
   }
 }

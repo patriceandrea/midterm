@@ -47,11 +47,6 @@ app.use("/order", ordersRoutes(database));
 app.use("/admin", adminRoutes(database));
 app.use("/menu", menuRoutes(database));
 
-// Note: mount other resources here, using the same pattern above
-
-// Warning: avoid creating more routes in this file!
-// Separate them into separate routes files (see above).
-
 //TESTING ROUTE
 app.get("/dev", (req, res) => {
   res.render("dev");
@@ -62,10 +57,12 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+// TODO -- move to a routing file
 app.get("/menu", (req, res) => {
   res.render("menu");
 });
 
+// TODO -- move to a routing file
 app.get("/cart", (req, res) => {
   res.render("cart");
 });
