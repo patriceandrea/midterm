@@ -3,7 +3,6 @@ const router = express.Router();
 const { sendCustomerMessage } = require("../twilio.js");
 // const bcrypt = require("bcryptjs");
 
-
 module.exports = (db) => {
   router.get("/", (req, res) => {
     db.getAllPendingOrders()
@@ -39,9 +38,9 @@ module.exports = (db) => {
     //       return;
     //     }
     //     req.session.userId = user.id;
-        res.redirect("/admin");
-      // })
-      // .catch(e => res.send(e));
+    // })
+    // .catch(e => res.send(e));
+    res.redirect("/admin");
   });
 
 
@@ -52,7 +51,7 @@ module.exports = (db) => {
   //     res.send("You are logged out");
   //   });
 
- 
+
 
   router.post("/complete", (req, res) => {
 
