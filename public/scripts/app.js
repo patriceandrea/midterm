@@ -22,7 +22,7 @@ $().ready(() => {
           <i class="fa-regular fa-pepper-hot"></i>
         </div>
         <div class="d-grid gap-2">
-          <button type="button" class="btn btn-outline-dark btn-sm">Add to Cart</button>
+          <button type="button" id="${menuItem.id}" class="btn btn-outline-dark btn-sm">Add to Cart</button>
         </div>
       </div>
     </div>`);
