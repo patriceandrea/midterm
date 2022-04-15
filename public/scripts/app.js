@@ -9,7 +9,7 @@ $().ready(() => {
   const createMenuElement = (menuItem) => {
     const $menuItem = $(`
     <div class="card">
-      <img src="${menuItem.photo.slice(4)}" class="card-img-top" alt="Food pic" style="width:10rem;height:156px">
+      <img src="${menuItem.photo.slice(4)}" class="card-img-top" alt="Food pic" style="width:9.1rem;height:156px">
       <div class="card-body">
         <div class="card-title">
           <h5>${menuItem.name}</h5>
