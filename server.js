@@ -56,17 +56,6 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-// TODO -- move to a routing file
-app.get("/menu", (req, res) => {
-  res.render("menu");
-});
-
-// TODO -- move to a routing file
-app.get("/cart", (req, res) => {
-  res.render("cart");
-});
-
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
-
