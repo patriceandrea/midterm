@@ -11,7 +11,6 @@ module.exports = () => {
   });
 
   router.get("/?:items/", (req, res) => {
-
     res.render("cart");
   });
 
