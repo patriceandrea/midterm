@@ -18,8 +18,15 @@ nav {
     margin-right: 2rem;
   }
 
+  a, a:hover {
+    color: inherit;
+  }
+
+  .fa-basket-shopping {
+    cursor: pointer;
+  }
+
   #logo {
     margin-right: auto;
-    text-decoration: none;
   }
 }
