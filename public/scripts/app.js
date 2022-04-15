@@ -16,10 +16,14 @@ $(document).ready(() => {
 
     const $menuItem = $(`
     <div class="card">
-      <img src="${menuItem.photo.slice(4)}" class="card-img-top" alt="Food pic" style="width:208px;height:156px">
+      <img src="${menuItem.photo.slice(4)}" class="card-img-top" alt="Food pic" style="width:10rem;height:156px">
       <div class="card-body">
-        <h5 class="card-title">${menuItem.name}</h5>
-        <p class="card-text">${menuItem.description} </p>
+        <div class="card-title">
+          <h5>${menuItem.name}</h5>
+        </div>
+        <div class="card-text">
+          ${menuItem.description}
+        </div>
         <div class="icon-row">
           <i class="fa-regular fa-salad"></i>
           <i class="fa-regular fa-pepper-hot"></i>
@@ -52,7 +56,7 @@ $(document).ready(() => {
     <div class="menu-category">
     <h2>${category}</h2>
     <div class="category-cards">
-      ${$menuItems}
+      ${$menuItems.join('')}
     </div>
     `);
     return $menuCategory;
