@@ -33,8 +33,10 @@ app.use(
   })
 );
 
+// Serve static files from /public and /img
 app.use(express.static("public"));
 app.use(express.static("img"));
+
 app.use(express.json());
 
 const usersRoutes = require("./routes/users");
@@ -48,11 +50,6 @@ app.use("/order", ordersRoutes(database));
 app.use("/admin", adminRoutes(database));
 app.use("/menu", menuRoutes(database));
 app.use("/cart", cartRoutes(database));
-
-//TESTING ROUTE
-app.get("/dev", (req, res) => {
-  res.render("dev");
-});
 
 // Home page
 app.get("/", (req, res) => {
