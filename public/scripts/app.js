@@ -1,6 +1,7 @@
 $(document).ready(() => {
 
 
+
   const loadMenu = () => {
     $.ajax('/menu', { method: 'GET' })
       .then((menuItems) => renderMenu(menuItems))
@@ -28,9 +29,14 @@ $(document).ready(() => {
           <i class="fa-regular fa-salad"></i>
           <i class="fa-regular fa-pepper-hot"></i>
         </div>
+
         <div class="d-grid gap-2">
-          <button type="button" class="btn btn-outline-dark btn-sm">Add to Cart</button>
-        </div>
+        <button id='liveToastBtn' type="button" class="btn btn-outline-dark btn-sm" data-toggle="tooltip" data-placement="top"
+        title="I want to eat this!">Add to Cart</button>
+      </div>
+
+
+
       </div>
     </div>`);
     return $menuItem;
@@ -66,7 +72,7 @@ $(document).ready(() => {
     // FOR DEVELOPMENT
     // KEYS OF menuItem: id, name, description, price, modifiers, photo, category, type, active, category_name
 
-    const categories = menuItems.map(x => [ parseInt(x.category), x.category_name ]);
+    const categories = menuItems.map(x => [parseInt(x.category), x.category_name]);
     const categoryList = [...new Set(categories.map(x => x[1]))];
 
     const menuItemsByCategory = {};
@@ -78,6 +84,10 @@ $(document).ready(() => {
     for (let category in menuItemsByCategory) {
       $('#menu').append(createCategoryElement(category, menuItemsByCategory[category]));
     }
+
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
 
 
     // menuItems

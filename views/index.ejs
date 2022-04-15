@@ -7,6 +7,7 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/addToCartButton.js"></script>
 </head>
 
 <body>
@@ -43,11 +44,32 @@
     <div id="menu">
 
     </div>
+    <!-- use this image as reference  -->
+    <!-- <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hlZnxlbnwwfHwwfHw%3D&amp;w=1000&amp;q=80" width="50" height="50" class="rounded-circle"> -->
+    <!-- <button type="button" class="btn btn-primary" id="liveToastBtn">Add to Cart</button>
 
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+      <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <img
+            src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hlZnxlbnwwfHwwfHw%3D&amp;w=1000&amp;q=80"
+            width="50" height="50" class="rounded me-2" alt="...">
+          <strong class="me-auto">Gonzo</strong>
+          <small>A few seconds ago</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          You just added to the cart!
+        </div>
+      </div>
+    </div> -->
+
+    <!-- use this to test  -->
     <div class="menu-category">
       <h2>Single-Page Appetizers</h2>
 
       <div class="category-cards">
+
         <div class="card">
           <img src="https://via.placeholder.com/250x180.png?text=Food" class="card-img-top" alt="Food pic">
           <div class="card-body">
@@ -57,15 +79,42 @@
               <i class="fa-regular fa-salad"></i>
               <i class="fa-regular fa-pepper-hot"></i>
             </div>
-            <a href="/cart">
-              <div class="d-grid gap-2">
-                <button type="button" class="btn btn-outline-dark btn-sm">Add to Cart</button>
-                </form>
+
+            <!-- the button! -->
+            <div class="d-grid gap-2">
+              <button id='liveToastBtn' type="button" class="btn btn-outline-dark btn-sm">Add to Cart</button>
+            </div>
+
+            <!-- toasts test -->
+            <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+              <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                  <img
+                    src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hlZnxlbnwwfHwwfHw%3D&amp;w=1000&amp;q=80"
+                    width="50" height="50" class="rounded me-2" alt="...">
+                  <strong class="me-auto">Gonzo</strong>
+                  <small>A few seconds ago</small>
+                  <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                  You just added to the cart!
+                </div>
               </div>
-            </a>
+            </div>
+
+
+
           </div>
         </div>
 
+
+        <!-- <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right"
+          title="Tooltip on right">
+          Tooltip on right
+        </button> -->
+
+
+        <!-- second test  -->
         <div class="card">
           <img src="https://via.placeholder.com/250x180.png?text=Food" class="card-img-top" alt="Food pic">
           <div class="card-body">
@@ -73,10 +122,11 @@
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
             <div class="icon-row">
             </div>
-            <a href="/cart">
-              <div class="d-grid gap-2">
-                <button type="button" class="btn btn-outline-dark btn-sm">Add to Cart</button>
-              </div>
+            <!--
+            <div class="d-grid gap-2">
+              <button type="button" class="btn btn-outline-dark btn-sm" data-toggle="tooltip" data-placement="top"
+                title="Food added to the cart!">Add to Cart</button>
+            </div> -->
             </a>
           </div>
         </div>
