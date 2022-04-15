@@ -34,7 +34,7 @@ $(document).ready(() =>{
     // `
     const string = 'Hello';
     return `<div><h1>${string}</h1></div>`;
-   }
+  };
 
 
 
@@ -43,20 +43,20 @@ $(document).ready(() =>{
       let allPending = showCurrentOrder(order);
       $('.table').append(allPending);
     }
-  }
+  };
 
 
   const renderItems = () => {
-    console.log('Hello')
+    console.log('Hello');
     $.ajax("/admin/pending", { method: 'GET' })
-        .then((data) => {
-          console.log('Data',data)
-          renderPendingItems(data);
-        })
-    }
+      .then((data) => {
+        console.log('Data',data);
+        renderPendingItems(data);
+      });
+  };
 
 
- renderItems();
+  renderItems();
 
-})
+});
 
