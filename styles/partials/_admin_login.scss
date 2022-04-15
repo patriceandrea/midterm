@@ -3,14 +3,16 @@ body{
   background-color: white;
 }
 
-nav {
-  background-color: $red;
+#admin-portal {
+  display: flex;
   position: sticky;
   height: 5.5rem;
   width: 100%;
   padding: 0 4.2rem;
   display: flex;
   align-items: center;
-  justify-content: right;
+  justify-content: left;
   z-index: 99;
 }
+
+
