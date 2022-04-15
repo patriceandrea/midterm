@@ -3,7 +3,7 @@
 
 <head>
   <%- include('partials/_head'); %>
-    <title>Burgïr | Homepage</title>
+    <title>Boorgïr | Homepage</title>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
@@ -11,25 +11,8 @@
 </head>
 
 <body>
-  <nav>
-    <a id="logo" href="/">
-      <h1>Logo</h1>
-    </a>
-    <!-- TODO - animation: display greeting once user logged in w/o login and register button -->
-    <span>Login</span>
-    <span>Register</span>
-    <!-- TODO - animation: adding number of items in cart w/ BS Toast-->
-    <!-- TODO - animation: notifications pops out once an item is added -->
-    <a href="/cart">
-      <!-- TODO - change the weight of this icon to match the food icons -->
-      <i class="fa-light fa-basket-shopping"></i>
-    </a>
-  </nav>
-
-  <header>
-    <img class="img-fluid" src="img/open-kitchen-banner.jpg">
-    <h2 class="centered">Authentic Earthen cuisine from our oven to your stomach.</h2>
-  </header>
+  <%- include('partials/_navbar') %>
+  <%- include('partials/_header') %>
 
   <main>
     <!-- TODO-animation: scroll down to menu-category once button is pushed  -->
@@ -62,9 +45,7 @@
 
   </main>
 
-  <footer>
-    <%- include('partials/_footer'); %>
-  </footer>
+  <%- include('partials/_footer') %>
 
 </body>
 

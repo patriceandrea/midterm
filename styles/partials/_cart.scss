@@ -17,6 +17,11 @@
   border: 1px solid gray;
   text-align: center;
   border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  h2 {
+    margin: 1.2rem 0rem;
+  }
 
   .menu-item-summary {
     margin: 0rem 0rem 0rem 0rem;
@@ -46,11 +51,15 @@
   padding: 0rem 0.9rem 0.9rem 0.9rem;
   text-align: center;
   border-radius: 1.5rem;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  h2 {
+    margin: 1.2rem 0rem;
+  }
 
   .summary-title {
     width: 100%;
-    margin-bottom: 0.7rem;
+    margin: 0rem 0rem 0.7rem 0rem;
     padding: 0rem 0rem;
 
     .order-summary-text {

@@ -6,10 +6,60 @@ $().ready(() => {
   };
   loadMenu();
 
+  const randInt = (n) => Math.floor(Math.random() * n);
+
+  const randomIconsJoined = () => {
+    const icons = [
+      '<i class="fa-regular fa-leaf"></i>',
+      '<i class="fa-regular fa-salad"></i>',
+      '<i class="fa-regular fa-steak"></i>',
+      '<i class="fa-regular fa-pepper-hot"></i>',
+      '<i class="fa-regular fa-avocado"></i>',
+      '<i class="fa-light fa-kiwi-fruit"></i>',
+      '<i class="fa-regular fa-burger-cheese"></i>',
+      '<i class="fa-regular fa-carrot"></i>',
+      '<i class="fa-regular fa-croissant"></i>',
+      '<i class="fa-regular fa-egg"></i>',
+      '<i class="fa-regular fa-apple-whole"></i>',
+      '<i class="fa-regular fa-bagel"></i>',
+      '<i class="fa-regular fa-baguette"></i>',
+      '<i class="fa-regular fa-bone"></i>',
+      '<i class="fa-regular fa-cake-slice"></i>',
+      '<i class="fa-regular fa-candy"></i>',
+      '<i class="fa-regular fa-candy-cane"></i>',
+      '<i class="fa-regular fa-cheese-swiss"></i>',
+      '<i class="fa-regular fa-corn"></i>',
+      '<i class="fa-regular fa-donut"></i>',
+      '<i class="fa-regular fa-drumstick"></i>',
+      '<i class="fa-regular fa-egg-fried"></i>',
+      '<i class="fa-regular fa-hotdog"></i>',
+      '<i class="fa-regular fa-meat"></i>',
+      '<i class="fa-regular fa-pancakes"></i>',
+      '<i class="fa-regular fa-pizza"></i>',
+      '<i class="fa-regular fa-shrimp"></i>',
+      '<i class="fa-regular fa-shish-kebab"></i>',
+      '<i class="fa-regular fa-sushi-roll"></i>',
+      '<i class="fa-regular fa-taco"></i>',
+      '<i class="fa-regular fa-turkey"></i>',
+      '<i class="fa-regular fa-waffle"></i>',
+      '<i class="fa-regular fa-wine-bottle"></i>',
+      '<i class="fa-regular fa-wine-glass"></i>',
+      '<i class="fa-regular fa-whiskey-glass-ice"></i>'
+    ];
+
+    const maxIconsPerRow = 4;
+    const iconNum = randInt(maxIconsPerRow);
+
+    const iconResult = Array(iconNum).fill().map((x) => icons[randInt(icons.length)]);
+    return iconResult.join('');
+  };
+
+  randomIconsJoined();
+
   const createMenuElement = (menuItem) => {
     const $menuItem = $(`
     <div class="card">
-      <img src="${menuItem.photo.slice(4)}" class="card-img-top" alt="Food pic" style="width:10rem;height:156px">
+      <img src="${menuItem.photo.slice(4)}" class="card-img-top" alt="Food pic" style="width:9.1rem;height:156px">
       <div class="card-body">
         <div class="card-title">
           <h5>${menuItem.name}</h5>
@@ -18,8 +68,7 @@ $().ready(() => {
           ${menuItem.description}
         </div>
         <div class="icon-row">
-          <i class="fa-regular fa-salad"></i>
-          <i class="fa-regular fa-pepper-hot"></i>
+          ${randomIconsJoined()}
         </div>
 
         <div class="d-grid gap-2">

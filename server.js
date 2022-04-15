@@ -44,29 +44,20 @@ const ordersRoutes = require("./routes/order");
 const adminRoutes = require("./routes/admin");
 const menuRoutes = require("./routes/menu");
 const cartRoutes = require('./routes/cart');
+const soonRoutes = require('./routes/soon');
 
 app.use("/api/users", usersRoutes(database));
 app.use("/order", ordersRoutes(database));
 app.use("/admin", adminRoutes(database));
 app.use("/menu", menuRoutes(database));
 app.use("/cart", cartRoutes(database));
+app.use("/", soonRoutes());
 
 // Home page
 app.get("/", (req, res) => {
   res.render("index");
 });
 
-// TODO -- move to a routing file
-app.get("/menu", (req, res) => {
-  res.render("menu");
-});
-
-// TODO -- move to a routing file
-app.get("/cart", (req, res) => {
-  res.render("cart");
-});
-
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
-

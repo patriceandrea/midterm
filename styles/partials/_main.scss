@@ -30,10 +30,11 @@ main > h2 {
 .menu-category {
   display: flex;
   flex-direction: column;
-  margin: 1.5rem 3.5rem 0rem 3.5rem;
+  margin: 1.5rem 1.8rem 0rem 1.8rem;
   padding-bottom: 1.8rem;
-  border: 1px solid gray;
+  border: 1px solid lightgray;
   border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
   h2 {
     margin: 1.2rem 2rem 0.4rem 2rem;
@@ -45,8 +46,8 @@ main > h2 {
     justify-content: center;
 
     .card {
-      width: 10rem;
-      margin: 0.8rem 0.8rem 0rem 0.8rem;
+      width: 9.2rem;
+      margin: 0.8rem 0.4rem 0rem 0.4rem;
 
       .card-body {
         padding: 0.5rem;
@@ -82,5 +83,14 @@ main > h2 {
       }
     }
 
+    .card:hover {
+      border-color: black;
+    }
+
   }
+}
+
+
+.menu-category:hover {
+  border-color: black;
 }
