@@ -1,7 +1,4 @@
-$(document).ready(() => {
-
-
-
+$().ready(() => {
   const loadMenu = () => {
     $.ajax('/menu', { method: 'GET' })
       .then((menuItems) => renderMenu(menuItems))
@@ -10,11 +7,6 @@ $(document).ready(() => {
   loadMenu();
 
   const createMenuElement = (menuItem) => {
-    // FOR DEVELOPMENT
-    // KEYS OF menuItem: id, name, description, price, modifiers, photo, category, type, active, category_name
-
-    // TODO -- consider if there is a more appropriate solution to the URL issue than slicing it
-
     const $menuItem = $(`
     <div class="card">
       <img src="${menuItem.photo.slice(4)}" class="card-img-top" alt="Food pic" style="width:10rem;height:156px">
@@ -51,18 +43,12 @@ $(document).ready(() => {
 
     $menuItems = $menuItems.map((x) => x[0].outerHTML);
 
-    // console.log('$menuItems');
-    // console.log($menuItems.map(x => x));
-    // console.log();
-    // console.log('$menuItems joined');
-    // console.log($menuItems.join(''));
-
-    // TODO GONZO
     const $menuCategory = $(`
     <div class="menu-category">
-    <h2>${category}</h2>
-    <div class="category-cards">
-      ${$menuItems.join('')}
+      <h2>${category}</h2>
+      <div class="category-cards">
+        ${$menuItems.join('')}
+      </div>
     </div>
     `);
     return $menuCategory;
@@ -85,8 +71,8 @@ $(document).ready(() => {
       $('#menu').append(createCategoryElement(category, menuItemsByCategory[category]));
     }
 
-    $(function () {
-      $('[data-toggle="tooltip"]').tooltip()
+    $(() => {
+      $('[data-toggle="tooltip"]').tooltip();
     })
 
 
