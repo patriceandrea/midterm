@@ -8,7 +8,7 @@ const sendRestaurantMessage = function() {
   console.log("sending message...");
   client.messages
     .create({
-      body: "Alert: A customer has placed an order! Please head over to the admin page to accept order",
+      body: "Alert: A customer has placed an order! Please head over to the admin page to accept the order.",
       from: process.env.TWILIO_NUMBER,
       to: "+16478956858"
     })
@@ -22,7 +22,7 @@ const sendCustomerMessage = (name, phone) => {
   console.log("sending message...");
   client.messages
     .create({
-      body: `Hi ${name},Your order has been accepted! Thank you for ordering`,
+      body: `Hi ${name}, your order has been accepted! Thank you for ordering with us. We hope to see you again soon!`,
       from: process.env.TWILIO_NUMBER,
       to: phone
     })
