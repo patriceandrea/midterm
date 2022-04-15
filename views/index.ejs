@@ -10,20 +10,7 @@
 </head>
 
 <body>
-  <nav>
-    <a id="logo" href="/">
-      <h1>Logo</h1>
-    </a>
-    <!-- TODO - animation: display greeting once user logged in w/o login and register button -->
-    <span>Login</span>
-    <span>Register</span>
-    <!-- TODO - animation: adding number of items in cart w/ BS Toast-->
-    <!-- TODO - animation: notifications pops out once an item is added -->
-    <a href="/cart">
-      <!-- TODO - change the weight of this icon to match the food icons -->
-      <i class="fa-light fa-basket-shopping"></i>
-    </a>
-  </nav>
+  <%- include('partials/_navbar') %>
 
   <header>
     <img class="img-fluid" src="img/open-kitchen-banner.jpg">
