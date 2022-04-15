@@ -3,10 +3,10 @@
 
 <head>
   <%- include('partials/_head'); %>
-  <title>Burgïr | SNAQ Admin</title>
+    <title>Burgïr | SNAQ Admin</title>
 
-  <!-- App JS -->
-  <script type="text/javascript" src="/scripts/admin.js"></script>
+    <!-- App JS -->
+    <script type="text/javascript" src="/scripts/admin.js"></script>
 </head>
 
 <body>
@@ -104,73 +104,77 @@
         </div>
 
 
-      <!-- Table -->
-      <div class="col py-3">
-        <table class="table table-centered  mb-0 table-hover">
-          <caption align="top" id="current-orders">Current Orders :  <%= orderItems.length %></caption>
-          <thead class="table-light">
+        <!-- Table -->
+        <div class="col py-3">
+          <table class="table table-centered  mb-0 table-hover">
+            <caption align="top" id="current-orders">Current Orders : <%= orderItems.length %>
+            </caption>
+            <thead class="table-light">
 
-            <tr>
-              <th>Name</th>
-              <th>Order #</th>
-              <th>Order</th>
-              <th>Requests</th>
-              <th>Created At</th>
-              <th> Wait Time</th>
-              <th>Mark Completed</th>
-            </tr>
-          </thead>
-          <tbody>
+              <tr>
+                <th>Name</th>
+                <th>Order #</th>
+                <th>Order</th>
+                <th>Requests</th>
+                <th>Created At</th>
+                <th> Wait Time</th>
+                <th>Mark Completed</th>
+              </tr>
+            </thead>
+            <tbody>
 
-            <tr class="pendingOrders" id="orders">
-              <% for (let i=0; i < orderItems.length; i++){ %>
-                <td>
-                  <%= orderItems[i].name %>
-                </td>
-                <td>
-                  <%= orderItems[i].order_id %>
-                </td>
-                <td>
-                  <%= orderItems[i].item %>
-                </td>
-                <td>
-                  <%= orderItems[i].comments %>
-                </td>
-                <td>
-                  <%= orderItems[i].created_at %>
-                </td>
+              <tr class="pendingOrders" id="orders">
+                <% for (let i=0; i < orderItems.length; i++){ %>
+                  <td>
+                    <%= orderItems[i].name %>
+                  </td>
+                  <td>
+                    <%= orderItems[i].order_id %>
+                  </td>
+                  <td>
+                    <%= orderItems[i].item %>
+                  </td>
+                  <td>
+                    <%= orderItems[i].comments %>
+                  </td>
+                  <td>
+                    <%= orderItems[i].created_at %>
+                  </td>
 
-                    <td>
-                      <!-- Wait List Drop Down-->
-                      <div class="btn-group">
+                  <td>
+                    <!-- Wait List Drop Down-->
+                    <div class="btn-group">
 
-                        <form method="POST" action="/admin/waitTime" class="waitList form-inline"></form>
-                        <input name="waitTime" type="hidden" value="<%=orderItems[i].phone%>">
+                      <form method="POST" action="/admin/waitTime" class="waitList form-inline"></form>
+                      <input name="waitTime" type="hidden" value="<%=orderItems[i].phone%>">
 
-                        <select id ="selectWaitTime<%=orderItems[i].name%>" class=" form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                          <option type="submit" selected value="15">15 mins</option>
-                          <option type="submit" value="20">20 mins</option>
-                          <option type="submit" value="30">30 mins</option>
-                          <option type="submit" value="45">45 mins</option>
-                          <option type="submit" value="60">60 mins</option>
-                        </select>
+                      <select id="selectWaitTime<%=orderItems[i].name%>" class=" form-select form-select-lg mb-3"
+                        aria-label=".form-select-lg example">
+                        <option type="submit" selected value="15">15 mins</option>
+                        <option type="submit" value="20">20 mins</option>
+                        <option type="submit" value="30">30 mins</option>
+                        <option type="submit" value="45">45 mins</option>
+                        <option type="submit" value="60">60 mins</option>
+                      </select>
 
-                      </div>
-      </div>
+                    </div>
+        </div>
 
 
-      <!-- Completed Button -->
-      <td><form name="complete-form" method="POST" action="/admin/complete" id="complete<%orderItems[i].order_id%>">
-        <input name="completeOrderId" type="hidden" value="<%=orderItems[i].order_id%>">
-        <input name="customer" type="hidden" value="<%=orderItems[i].name%>">
-        <input name="phone" type="hidden" value="<%=orderItems[i].phone%>">
-        <button type="submit" class="completed btn btn-outline-success">Completed</button></form>
-      </td>
-      </tr>
+        <!-- Completed Button -->
+        <td>
+          <form name="complete-form" method="POST" action="/admin/complete" id="complete<%orderItems[i].order_id%>">
+            <input name="completeOrderId" type="hidden" value="<%=orderItems[i].order_id%>">
+            <input name="customer" type="hidden" value="<%=orderItems[i].name%>">
+            <input name="phone" type="hidden" value="<%=orderItems[i].phone%>">
+            <button type="submit" class="completed btn btn-outline-success">Completed</button>
+          </form>
+        </td>
+        </tr>
 
-      <% }%>
-        </tbody>
-        </table>
+        <% }%>
+          </tbody>
+          </table>
 
 
 
