@@ -5,107 +5,96 @@
   <%- include('partials/_head'); %>
     <title>Burgïr | Your Basket</title>
 
-    <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
 </head>
 
 <body>
   <%- include('partials/_navbar') %>
+  <%- include('partials/_header') %>
 
-  <!-- TODO -- MAKE A _header-hero.ejs PARTIAL -->
-  <header>
-    <img id="hero" src="img/open-kitchen-banner.jpg">
-
-    <h2>Authentic Earthen cuisine from our oven to your stomach.</h2>
-  </header>
-
-  <main>
-    <!-- TODO FOR GONZO -- ASSESS IF THIS CSS IS NEEDED: DELETE IF NOT, INCORPORATE INTO THE APPROPRIATE SASS PARTIAL IF NEEDED -->
-    <div style="margin: 0 auto; width: fit-content">
-      <div id="my-bag">
-        <h2>My bag</h2>
-
-        <!-- class flex-row is not needed here, we just need align-items:center -->
-        <div class="d-flex flex-row">
-          <div class="col-3 p-2">
-            <img src="/food_10.jpg" alt="Food img placeholder"
-              style="width:-webkit-fill-available">
-          </div>
-          <div class="col-3 p-2">
-            <div><span>Strawberry Dessert</span></div>
-          </div>
-          <div class="col-4 p-2">
-            <div><span>Qty: 1</span></div>
-            <div class="btn-group" role="group" aria-label="Basic outlined example">
-              <button type="button" class="btn btn-outline-dark">Remove</button>
-              <button type="button" class="btn btn-outline-dark">Edit</button>
-            </div>
-          </div>
-          <div class="col-2 p-2">
-            <div><span>$13.82</span></div>
+  <main style="margin: 0 auto; width:fit-content">
+    <div id="my-bag">
+      <h2>My bag</h2>
+      <div class="d-flex flex-row">
+        <div class="col-3 p-2">
+          <img src="/food_10.jpg" alt="Food img placeholder"
+            style="width:150px">
+        </div>
+        <div class="col-3 p-2">
+          <div><span>Strawberry Dessert</span></div>
+        </div>
+        <div class="col-4 p-2">
+          <div><span>Qty: 1</span></div>
+          <div class="btn-group" role="group" aria-label="Basic outlined example">
+            <button type="button" class="btn btn-outline-dark">Remove</button>
+            <button type="button" class="btn btn-outline-dark">Edit</button>
           </div>
         </div>
-
-        <div class="d-flex flex-row">
-          <div class="col-3 p-2">
-            <img src="/food_12.jpg" alt="Food img placeholder"
-              style="width:-webkit-fill-available">
-          </div>
-          <div class="col-3 p-2">
-            <div><span>Turkey Club</span></div>
-          </div>
-          <div class="col-4 p-2">
-            <div><span>Qty: 1</span></div>
-            <div class="btn-group" role="group" aria-label="Basic outlined example">
-              <button type="button" class="btn btn-outline-dark">Remove</button>
-              <button type="button" class="btn btn-outline-dark">Edit</button>
-            </div>
-          </div>
-          <div class="col-2 p-2">
-            <div><span>$13.82</span></div>
-          </div>
-        </div>
-
-        <div class="d-flex flex-row">
-          <div class="col-3 p-2">
-            <img src="/food_19.jpg" alt="Food img placeholder"
-              style="width:-webkit-fill-available">
-          </div>
-          <div class="col-3 p-2">
-            <div><span>Mussel spicy soup</span></div>
-          </div>
-          <div class="col-4 p-2">
-            <div><span>Qty: 1</span></div>
-            <div class="btn-group" role="group" aria-label="Basic outlined example">
-              <button type="button" class="btn btn-outline-dark">Remove</button>
-              <button type="button" class="btn btn-outline-dark">Edit</button>
-            </div>
-          </div>
-          <div class="col-2 p-2">
-            <div><span>$13.82</span></div>
-          </div>
-        </div>
-
-        <div class="d-flex flex-row">
-          <div class="col-3 p-2">
-            <img src="/food_17.jpg" alt="Food img placeholder"
-              style="width:-webkit-fill-available">
-          </div>
-          <div class="col-3 p-2">
-            <div><span>Fully Loaded Nachos</span></div>
-          </div>
-          <div class="col-4 p-2">
-            <div><span>Qty: 1</span></div>
-            <div class="btn-group" role="group" aria-label="Basic outlined example">
-              <button type="button" class="btn btn-outline-dark">Remove</button>
-              <button type="button" class="btn btn-outline-dark">Edit</button>
-            </div>
-          </div>
-          <div class="col-2 p-2">
-            <div><span>$13.82</span></div>
-          </div>
+        <div class="col-2 p-2">
+          <div><span>$13.82</span></div>
         </div>
       </div>
+
+      <div class="d-flex flex-row">
+        <div class="col-3 p-2">
+          <img src="/food_12.jpg" alt="Food img placeholder"
+            style="width:150px">
+        </div>
+        <div class="col-3 p-2">
+          <div><span>Turkey Club</span></div>
+        </div>
+        <div class="col-4 p-2">
+          <div><span>Qty: 1</span></div>
+          <div class="btn-group" role="group" aria-label="Basic outlined example">
+            <button type="button" class="btn btn-outline-dark">Remove</button>
+            <button type="button" class="btn btn-outline-dark">Edit</button>
+          </div>
+        </div>
+        <div class="col-2 p-2">
+          <div><span>$13.82</span></div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-row">
+        <div class="col-3 p-2">
+          <img src="/food_19.jpg" alt="Food img placeholder"
+            style="width:150px">
+        </div>
+        <div class="col-3 p-2">
+          <div><span>Mussel spicy soup</span></div>
+        </div>
+        <div class="col-4 p-2">
+          <div><span>Qty: 1</span></div>
+          <div class="btn-group" role="group" aria-label="Basic outlined example">
+            <button type="button" class="btn btn-outline-dark">Remove</button>
+            <button type="button" class="btn btn-outline-dark">Edit</button>
+          </div>
+        </div>
+        <div class="col-2 p-2">
+          <div><span>$13.82</span></div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-row">
+        <div class="col-3 p-2">
+          <img src="/food_17.jpg" alt="Food img placeholder"
+            style="width:150px">
+        </div>
+        <div class="col-3 p-2">
+          <div><span>Fully Loaded Nachos</span></div>
+        </div>
+        <div class="col-4 p-2">
+          <div><span>Qty: 1</span></div>
+          <div class="btn-group" role="group" aria-label="Basic outlined example">
+            <button type="button" class="btn btn-outline-dark">Remove</button>
+            <button type="button" class="btn btn-outline-dark">Edit</button>
+          </div>
+        </div>
+        <div class="col-2 p-2">
+          <div><span>$13.82</span></div>
+        </div>
+      </div>
+    </div>
 
       <!-- TODO: add a comment form in the order-summary-box -->
       <div id="order-summary-box">
@@ -135,12 +124,9 @@
         </form>
         </div>
       </div>
-    </div>
   </main>
 
-  <footer>
-    <%- include('partials/_footer'); %>
-  </footer>
+  <%- include('partials/_footer') %>
 
 </body>
 
