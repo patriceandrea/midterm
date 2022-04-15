@@ -70,6 +70,7 @@ $().ready(() => {
         <div class="icon-row">
           ${randomIconsJoined()}
         </div>
+
         <div class="d-grid gap-2">
           <button type="button" id="${menuItem.id}" class="add-to-cart btn btn-outline-dark btn-sm">Add to Cart</button>
         </div>
@@ -99,7 +100,10 @@ $().ready(() => {
   };
 
   const renderMenu = (menuItems) => {
-    const categories = menuItems.map(x => [ parseInt(x.category), x.category_name ]);
+    // FOR DEVELOPMENT
+    // KEYS OF menuItem: id, name, description, price, modifiers, photo, category, type, active, category_name
+
+    const categories = menuItems.map(x => [parseInt(x.category), x.category_name]);
     const categoryList = [...new Set(categories.map(x => x[1]))];
 
     const menuItemsByCategory = {};
@@ -111,5 +115,14 @@ $().ready(() => {
     for (let category in menuItemsByCategory) {
       $('#menu').append(createCategoryElement(category, menuItemsByCategory[category]));
     }
+
+    $(() => {
+      $('[data-toggle="tooltip"]').tooltip();
+    })
+
+
+    // menuItems
+    //   .map(menuItemData => createMenuElement(menuItemData))
+    //   .forEach(menuElement => $('#menu').prepend(menuElement));
   };
 });
