@@ -1,0 +1,47 @@
+/* Set height to 100% for body and html to enable the background image to cover the whole page: */
+body, html {
+  height: 100%
+}
+
+.bgimg {
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  color: $ivory;
+  text-shadow: -1px 1px 0 #000,
+                1px 1px 0 #000,
+               1px -1px 0 #000,
+              -1px -1px 0 #000;
+  position: relative;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 25px;
+}
+
+/* Position text in the top-left corner */
+.topleft {
+  position: absolute;
+  top: 0;
+  left: 16px;
+}
+
+/* Position text in the bottom-left corner */
+.bottomright {
+  position: absolute;
+  bottom: 0;
+  right: 16px;
+}
+
+/* Position text in the middle */
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Style the <hr> element */
+hr {
+  margin: auto;
+  width: 40%;
+}
