@@ -15,6 +15,13 @@
   <main style="margin: 0 auto; width:fit-content">
     <div class="d-flex flex-column">
       <div class="d-flex" style="margin-bottom:2.5rem">
+        <div id="order-summary-box" style="width:22rem;">
+          <h2>Phone Number</h2>
+          <div class="form-group">
+            <input type="email" class="form-control" id="phone-number" placeholder="Enter your number to place your order">
+          </div>
+        </div>
+
         <div id="order-summary-box">
           <h2>Order Summary</h2>
           <div class="container summary-title">
@@ -40,13 +47,6 @@
             <form action="/cart/sendNotification" method= "POST">
             <button type="submit" class="btn btn-dark btn">Checkout</button>
           </form>
-          </div>
-        </div>
-
-        <div id="order-summary-box" style="width:22rem;">
-          <h2>Phone Number</h2>
-          <div class="form-group">
-            <input type="email" class="form-control" id="phone-number" placeholder="Enter your number to place your order">
           </div>
         </div>
       </div>
