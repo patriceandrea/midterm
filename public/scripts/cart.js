@@ -9,7 +9,7 @@ $().ready(() => {
 
   $('#cartIcon').on('click', (event) => {
     event.preventDefault();
-    window.location = 'http://localhost:8080/cart&items=' + cart.join();
+    window.location = 'http://localhost:8080/cart?items=' + cart.join();
   });
 });
 
